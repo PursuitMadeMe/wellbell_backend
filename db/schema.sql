@@ -1,0 +1,2 @@
+-- DROP DATABASE IF EXISTS wellbell_dev;
+-- CREATE DATABASE wellbell_dev;
