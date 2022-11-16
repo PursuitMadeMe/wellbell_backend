@@ -3,14 +3,13 @@ const express = require("express");
 
 
 const app = express();
-// const bellController = require("./controllers/bellsController")
 //middleware
 app.use(cors());
 app.use(express.json());
 
+const bellsController = require("./controllers/bellsController")
 
-
-// app.use("/bells", bellController);
+app.use("/bells", bellsController);
 
 // get
 app.get("/", (req, res) => {
