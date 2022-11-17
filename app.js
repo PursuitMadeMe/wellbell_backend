@@ -13,7 +13,7 @@ app.use("/bells", bellsController);
 
 // get
 app.get("/", (req, res) => {
-    res.send("Welcome to WellBell!")
+    res.send("Welcome to WellBell!!")
 });
 
 // const db = require("./db/dbConfig.js");
