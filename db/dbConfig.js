@@ -18,7 +18,6 @@ const cn = DATABASE_URL
       user: PG_USER,
     };
 
-
 const db = pgp(cn);
 
 module.exports = db;
