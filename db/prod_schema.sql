@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS bells;
+
+CREATE TABLE bells (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    location TEXT NOT NULL
+);
