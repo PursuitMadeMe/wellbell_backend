@@ -34,11 +34,13 @@ bells.get("/:id", async (req, res) => {
 // Create
 bells.post("/", async (req, res) => {
   const { body } = req;
+  console.log(body)
 
-  body.name = checkName(body);
+  body.name = (body);
 
   try {
     const createdBell = await createBell(body);
+    console.log(createdBell)
     if (createdBell.id) {
       res.status(200).json({
         success: true,
@@ -58,11 +60,14 @@ bells.post("/", async (req, res) => {
 // Update
 bells.put("/:id", async (req, res) => {
   const { id } = req.params;
+  console.log(id)
   const { body } = req;
+  console.log(body)
 
-  body.name = checkName(body);
+  body.name = (body);
 
   const updatedBell = await updateBell(body, id);
+  console.log(updatedBell)
   if (updatedBell.id) {
     res.status(200).json(updatedBell);
   } else {
