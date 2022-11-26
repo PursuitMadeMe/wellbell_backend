@@ -4,7 +4,7 @@ const { getAllBells,
   getBell,
   createBell,
   updateBell,
-  deleteBell, } = require("../queries/bells.js");
+  deleteBell } = require("../queries/bells.js");
 
 //INDEX
 bells.get("/", async (req, res) => {
@@ -38,11 +38,11 @@ bells.post("/", async (req, res) => {
   body.name = checkName(body);
 
   try {
-    const createdApparel = await createBell(body);
-    if (createdApparel.id) {
+    const createdBell = await createBell(body);
+    if (createdBell.id) {
       res.status(200).json({
         success: true,
-        payload: createdApparel,
+        payload: createdBell,
       });
     } else {
       res.status(422).json({
@@ -62,9 +62,9 @@ bells.put("/:id", async (req, res) => {
 
   body.name = checkName(body);
 
-  const updatedApparel = await updateBell(body, id);
-  if (updatedApparel.id) {
-    res.status(200).json(updatedApparel);
+  const updatedBell = await updateBell(body, id);
+  if (updatedBell.id) {
+    res.status(200).json(updatedBell);
   } else {
     res.status(404).json({ error: "bell not found" });
   }
@@ -73,11 +73,11 @@ bells.put("/:id", async (req, res) => {
 // Delete
 bells.delete("/:id", async (req, res) => {
   const { id } = req.params;
-  const deletedApparel = await deleteApparel(id);
-  if (deletedApparel.id) {
-    res.status(200).json({ payload: deletedApparel, success: true });
+  const deletedBell = await deleteBell(id);
+  if (deletedBell.id) {
+    res.status(200).json({ payload: deletedBell, success: true });
   } else {
-    res.status(404).json({ payload: "not found", success: false });
+    res.status(404).json({ payload: "Bell not found", success: false });
   }
 });
 
