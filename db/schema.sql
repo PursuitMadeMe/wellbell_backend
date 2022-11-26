@@ -6,5 +6,7 @@ CREATE DATABASE wellbell_dev;
 CREATE TABLE bells (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
-    location TEXT NOT NULL
+    type TEXT NOT NULL,
+    notification TEXT NOT NULL,
+    funfact TEXT NOT NULL
 );
