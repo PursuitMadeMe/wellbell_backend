@@ -24,8 +24,8 @@ const getAllBells = async () => {
 const createBell = async (bell) => {
     try {
       const newBell = await db.one(
-        "INSERT INTO bellss(name, type, notification, funfact) VALUES($1, $2, $3, $4,) RETURNING *",
-        [bell.name, bell.type, bell.notification,  bell.funfact]
+        "INSERT INTO bells (name, type, notification, funfact) VALUES($1, $2, $3, $4) RETURNING *",
+        [bell.name, bell.type, bell.notification, bell.funfact]
       );
       console.log("NEW BELL : ",newBell)
       return newBell;
