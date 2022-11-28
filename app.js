@@ -1,25 +1,28 @@
+//DEPENDENCIES
 const cors = require("cors");
 const express = require("express");
-const bellsController = require("./controllers/bellsController");
 
-
+//CONFIGURATION
 const app = express();
-//middleware
+
+//MIDDLEWARE
 app.use(express.json());
 app.use(cors());
 
 
+const bellsController = require("./controllers/bellsController");
+
 app.use("/bells", bellsController);
 
-// get
+// ROUTES
 app.get("/", (req, res) => {
-    res.send("Welcome to WellBell!!")
+    res.send("Welcome to WellBell!!");
 });
 
-// const db = require("./db/dbConfig.js");
-
+//404 PAGE
 app.get("*", (req, res) => {
     res.status(404).send("page not found")
 });
 
+//EXPORT
 module.exports = app;
