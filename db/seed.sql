@@ -16,3 +16,25 @@ INSERT INTO bells (name, type, notification, funfact) VALUES
 ('reminder13', 'Self-Care', 'Look In The Mirror and Tell Yourself 5 Nice Things', 'Positive Affirmations Will Make You Feel Better'),
 ('reminder14', 'Self-Care', 'Call or text someone you love', 'Knowing Someone is Listening Will Make You Feel Better'),
 ('reminder15', 'Self-Care', 'Dont check any social media platforms for the next hour!', 'Social Media Feeds Will Slowly Decrease Your Energy');
+
+INSERT INTO rewards(type, content) VALUES
+('Physical','10% off Planet fitness'),
+('Physical','20% off local Zumba class'),
+('Physical','15% off local Yoga class'),
+('Physical','10% off Pilates'),
+('Nutrition ','10% GNC
+'),
+('Nutrition ','$10 off over $75.00 purchase - whole foods
+'),
+('Nutrition ','10% off Fresh Direct delivery'),
+('Nutrition ','$2.50 off Cliff Bar
+'),
+('Nutrition ','$2.00 off Smart Water 1liter bottle
+'),
+('Self-Care','5% off Nike apparel'),
+('Self-Care ','5% off Nike apparel'),
+('Self-Care','5% off Nike apparel'),
+('Self-Care ','5% off Nike apparel'),
+('Self-Care','5% off Nike apparel'),
+
+

@@ -10,3 +10,24 @@ CREATE TABLE bells (
     notification TEXT NOT NULL,
     funfact TEXT NOT NULL
 );
+
+DROP TABLE IF EXISTS rewards;
+
+CREATE TABLE rewards ( 
+    id SERIAL PRIMARY KEY, 
+    type TEXT,
+    content TEXT,
+    -- CHECK (count >= 3)
+    -- bells_id INTEGER REFERENCES bells (id)
+    -- ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username TEXT UNIQUE NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    -- verified BOOLEAN DEFAULT false,
+    -- admin BOOLEAN DEFAULT false
+);
