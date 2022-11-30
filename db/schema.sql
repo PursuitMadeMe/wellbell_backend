@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS rewards;
 CREATE TABLE rewards ( 
     id SERIAL PRIMARY KEY, 
     type TEXT,
-    content TEXT,
+    content TEXT
     -- CHECK (count >= 3)
     -- bells_id INTEGER REFERENCES bells (id)
     -- ON DELETE CASCADE
@@ -27,7 +27,17 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
-    email TEXT UNIQUE NOT NULL,
-    -- verified BOOLEAN DEFAULT false,
+    email TEXT UNIQUE NOT NULL
+    ppoints INTEGER,
+    npoints INTEGER,
+    scpoints INTEGER
     -- admin BOOLEAN DEFAULT false
+);
+
+DROP TABLE IF EXISTS users_bells;
+
+CREATE TABLE users_bells (
+    bell_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    created TIMESTAMP DEFAULT NOW()
 );
