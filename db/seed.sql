@@ -17,6 +17,14 @@ INSERT INTO bells (name, type, notification, funfact) VALUES
 ('reminder14', 'Self-Care', 'Call or text someone you love', 'Knowing Someone is Listening Will Make You Feel Better'),
 ('reminder15', 'Self-Care', 'Dont check any social media platforms for the next hour!', 'Social Media Feeds Will Slowly Decrease Your Energy');
 
+
+
+SPENCER SIMON:
+NUTRITION [  5  ]
+PHYSICAL [  20  ] CLAIM REWARD
+SELF-CARE [   4  ]
+
+
 INSERT INTO rewards (type, content, coupon) VALUES
 ('Physical','10% off Planet fitness'),
 ('Physical','20% off Zumba class'),
@@ -34,6 +42,7 @@ INSERT INTO rewards (type, content, coupon) VALUES
 ('Self-Care ','$15 off at BedBathandBeyond'),
 ('Self-Care','3% Cash Back at Sephora');
 
+.. USER INFO: uid, firstName, lastName,
 INSERT INTO users (email, username, ppoints, npoints, scpoints)
 VALUES
 ('person1@gmail.com','Jede', 2, 20, 8),

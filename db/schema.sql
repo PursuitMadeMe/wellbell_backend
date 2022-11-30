@@ -3,6 +3,19 @@ CREATE DATABASE wellbell_dev;
 
 \c wellbell_dev;
 
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username TEXT UNIQUE NOT NULL,
+    email TEXT UNIQUE NOT NULL
+    ppoints INTEGER,
+    npoints INTEGER,
+    scpoints INTEGER,
+    session INTEGER
+    -- admin BOOLEAN DEFAULT false
+);
+
+DROP TABLE IF EXISTS bells;
+
 CREATE TABLE bells (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
@@ -22,16 +35,12 @@ CREATE TABLE rewards (
     -- ON DELETE CASCADE
 );
 
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS sessions;
 
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    username TEXT UNIQUE NOT NULL,
-    email TEXT UNIQUE NOT NULL
-    ppoints INTEGER,
-    npoints INTEGER,
-    scpoints INTEGER
-    -- admin BOOLEAN DEFAULT false
+CREATE TABLE sessions ( 
+    id SERIAL PRIMARY KEY, 
+    type TEXT,
+    content TEXT
 );
 
 DROP TABLE IF EXISTS users_bells;
