@@ -6,7 +6,7 @@ CREATE DATABASE wellbell_dev;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
-    email TEXT UNIQUE NOT NULL
+    email TEXT UNIQUE NOT NULL,
     ppoints INTEGER,
     npoints INTEGER,
     scpoints INTEGER,

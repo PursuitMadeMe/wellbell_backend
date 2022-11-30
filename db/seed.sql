@@ -19,13 +19,13 @@ INSERT INTO bells (name, type, notification, funfact) VALUES
 
 
 
-SPENCER SIMON:
-NUTRITION [  5  ]
-PHYSICAL [  20  ] CLAIM REWARD
-SELF-CARE [   4  ]
+-- SPENCER SIMON:
+-- NUTRITION [  5  ]
+-- PHYSICAL [  20  ] CLAIM REWARD
+-- SELF-CARE [   4  ]
 
 
-INSERT INTO rewards (type, content, coupon) VALUES
+INSERT INTO rewards (type, content) VALUES
 ('Physical','10% off Planet fitness'),
 ('Physical','20% off Zumba class'),
 ('Physical','15% off Yoga class'),
@@ -42,23 +42,23 @@ INSERT INTO rewards (type, content, coupon) VALUES
 ('Self-Care ','$15 off at BedBathandBeyond'),
 ('Self-Care','3% Cash Back at Sephora');
 
-.. USER INFO: uid, firstName, lastName,
+-- .. USER INFO: uid, firstName, lastName,
 INSERT INTO users (email, username, ppoints, npoints, scpoints)
 VALUES
-('person1@gmail.com','Jede', 2, 20, 8),
-('person2@gmail.com','John', 20, 9, 11),
-('person3@gmail.com','Kim', 3, 12, 20),
-('person4@gmail.com','Spencer', 6, 13, 20),
-('person5@gmail.com','Zane', 14, 18, 17);
+('person1@gmail.com','Jede2', 2, 20, 8);
+-- ('person2@gmail.com','John', 20, 9, 11),
+-- ('person3@gmail.com','Kim', 3, 12, 20),
+-- ('person4@gmail.com','Spencer', 6, 13, 20),
+-- ('person5@gmail.com','Zane', 14, 18, 17);
 
-INSERT INTO users_bells (user_id, bell_id)
-VALUES
-(1,1),
-(1,1),
-(2,1),
-(2,2),
-(3,3),
-(3,4),
-(4,5),
-(5,6),
-(5,7);
+-- INSERT INTO users_bells (user_id, bell_id)
+-- VALUES
+-- (1,1),
+-- (1,1),
+-- (2,1),
+-- (2,2),
+-- (3,3),
+-- (3,4),
+-- (4,5),
+-- (5,6),
+-- (5,7);

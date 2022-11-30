@@ -1,10 +1,10 @@
 const db = require("../db/dbConfig.js");
 
-const getAllRewards = async (userId) => {
+const getAllRewards = async () => {
   try {
     const allRewards = await db.any(
-      "SELECT * FROM rewards WHERE user_id=$1",
-      userId
+      "SELECT * FROM rewards",
+      // userId
     );
     return allRewards;
   } catch (err) {
