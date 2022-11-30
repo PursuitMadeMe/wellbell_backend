@@ -1,10 +1,12 @@
 const express = require("express");
 const bells = express.Router();
-const { getAllBells, 
+const {
+  getAllBells,
   getBell,
   createBell,
   updateBell,
-  deleteBell } = require("../queries/bells.js");
+  deleteBell,
+} = require("../queries/bells.js");
 
 //INDEX
 bells.get("/", async (req, res) => {
@@ -35,7 +37,7 @@ bells.get("/:id", async (req, res) => {
 bells.post("/", async (req, res) => {
   const { body } = req;
 
-  body.name = (body);
+  body.name = body;
 
   try {
     const createdBell = await createBell(body.payload);
@@ -58,10 +60,9 @@ bells.post("/", async (req, res) => {
 // Update
 bells.put("/:id", async (req, res) => {
   const { id } = req.params;
-  
 
   const updatedBell = await updateBell(req.body, id);
-  console.log(updatedBell)
+  console.log(updatedBell);
   if (updatedBell.id) {
     res.status(200).json(updatedBell);
   } else {

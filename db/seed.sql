@@ -17,24 +17,48 @@ INSERT INTO bells (name, type, notification, funfact) VALUES
 ('reminder14', 'Self-Care', 'Call or text someone you love', 'Knowing Someone is Listening Will Make You Feel Better'),
 ('reminder15', 'Self-Care', 'Dont check any social media platforms for the next hour!', 'Social Media Feeds Will Slowly Decrease Your Energy');
 
-INSERT INTO rewards(type, content) VALUES
+
+
+SPENCER SIMON:
+NUTRITION [  5  ]
+PHYSICAL [  20  ] CLAIM REWARD
+SELF-CARE [   4  ]
+
+
+INSERT INTO rewards (type, content, coupon) VALUES
 ('Physical','10% off Planet fitness'),
-('Physical','20% off local Zumba class'),
-('Physical','15% off local Yoga class'),
+('Physical','20% off Zumba class'),
+('Physical','15% off Yoga class'),
 ('Physical','10% off Pilates'),
-('Nutrition ','10% GNC
-'),
-('Nutrition ','$10 off over $75.00 purchase - whole foods
-'),
+('Physical','$20 off Peloton'),
+('Nutrition ','10% off of GNC'),
+('Nutrition ','$10 off over $75.00 purchase - Whole Foods'),
 ('Nutrition ','10% off Fresh Direct delivery'),
-('Nutrition ','$2.50 off Cliff Bar
-'),
-('Nutrition ','$2.00 off Smart Water 1liter bottle
-'),
-('Self-Care','5% off Nike apparel'),
-('Self-Care ','5% off Nike apparel'),
-('Self-Care','5% off Nike apparel'),
-('Self-Care ','5% off Nike apparel'),
-('Self-Care','5% off Nike apparel'),
+('Nutrition ','$2.50 off Cliff Bar'),
+('Nutrition ','$2.00 off Smart Water 1-Liter bottle'),
+('Self-Care','5% off SpaFinder Participants'),
+('Self-Care ','10% off selfcareisforeveryone.com'),
+('Self-Care','$10 off at Bed, Bath and Body Works'),
+('Self-Care ','$15 off at BedBathandBeyond'),
+('Self-Care','3% Cash Back at Sephora');
 
+.. USER INFO: uid, firstName, lastName,
+INSERT INTO users (email, username, ppoints, npoints, scpoints)
+VALUES
+('person1@gmail.com','Jede', 2, 20, 8),
+('person2@gmail.com','John', 20, 9, 11),
+('person3@gmail.com','Kim', 3, 12, 20),
+('person4@gmail.com','Spencer', 6, 13, 20),
+('person5@gmail.com','Zane', 14, 18, 17);
 
+INSERT INTO users_bells (user_id, bell_id)
+VALUES
+(1,1),
+(1,1),
+(2,1),
+(2,2),
+(3,3),
+(3,4),
+(4,5),
+(5,6),
+(5,7);
