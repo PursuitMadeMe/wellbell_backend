@@ -4,10 +4,24 @@ const express = require("express");
 
 // CONFIGURATION
 const app = express();
+const http = require("http").Server(app);
 
 // MIDDLEWARE
 app.use(express.json());
 app.use(cors());
+
+const socketIO = require("socket.io")(http, {
+  cors: {
+    origin: "http://localhost:3000",
+  },
+});
+//Add this before the app.get() block
+socketIO.on("connection", (socket) => {
+  console.log(`⚡: ${socket.id} user just connected!`);
+  socket.on("disconnect", () => {
+    console.log("🔥: A user disconnected");
+  });
+});
 
 // CONTROLLERS
 const bellsController = require("./controllers/bellsController.js");
@@ -23,12 +37,18 @@ app.use("/users", usersController);
 
 // ROUTES
 app.get("/", (req, res) => {
-    res.send("Welcome to WellBell!");
+  res.send("Welcome to WellBell!");
+});
+
+app.get("/api", (req, res) => {
+  res.json({
+    message: "Hello world",
+  });
 });
 
 //404 PAGE
 app.get("*", (req, res) => {
-    res.status(404).send("page not found")
+  res.status(404).send("page not found");
 });
 
 //EXPORT
