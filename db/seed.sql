@@ -1,6 +1,7 @@
 \c wellbell_dev;
 
-INSERT INTO bells (name, type, notification, funfact) VALUES
+-- - Must add user_id to the end of the bells data -----------------------------------------------
+INSERT INTO bells (name, type, notification, funfact, user_id) VALUES
 ('reminder1', 'Nutrition', 'Drink Water!', '64oz of Water'),
 ('reminder2', 'Nutrition', 'Treat yourself to brain food!', 'Fish Are Rich in Omega-3s'),
 ('reminder3', 'Nutrition', 'Take your vitamins!', 'B, C, D'),
@@ -42,16 +43,22 @@ INSERT INTO rewards (type, content) VALUES
 ('Self-Care ','$15 off at BedBathandBeyond'),
 ('Self-Care','3% Cash Back at Sephora');
 
--- .. USER INFO: uid, firstName, lastName,
-INSERT INTO users (email, username, ppoints, npoints, scpoints)
-VALUES
-('person1@gmail.com','Jede2', 2, 20, 8);
--- ('person2@gmail.com','John', 20, 9, 11),
--- ('person3@gmail.com','Kim', 3, 12, 20),
--- ('person4@gmail.com','Spencer', 6, 13, 20),
--- ('person5@gmail.com','Zane', 14, 18, 17);
 
--- INSERT INTO users_bells (user_id, bell_id)
+
+
+INSERT INTO users (username,email, ppoints, npoints, scpoints, session, user_id)
+VALUES
+--- Must add session and userid into dummy data ---------------------------------------------
+('Jede2','person1@gmail.com', 2, 20, 8);
+('John','person2@gmail.com', 20, 9, 11),
+('Kim','person3@gmail.com', 3, 12, 20),
+('Spencer','person4@gmail.com',6, 13, 20),
+('Zane','person5@gmail.com',14, 18, 17);
+
+
+
+
+-- INSERT INTO users_bells (user_id, bell_id, email)
 -- VALUES
 -- (1,1),
 -- (1,1),
@@ -62,3 +69,6 @@ VALUES
 -- (4,5),
 -- (5,6),
 -- (5,7);
+
+-- JOIN table 
+SELECT bells.notification FROM bells INNER JOIN users ON bells.user_id=user.email

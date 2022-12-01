@@ -10,7 +10,9 @@ CREATE TABLE users (
     ppoints INTEGER,
     npoints INTEGER,
     scpoints INTEGER,
-    session INTEGER
+    session INTEGER,
+    user_id INTEGER NOT NULL,
+
     -- admin BOOLEAN DEFAULT false
 );
 
@@ -21,7 +23,8 @@ CREATE TABLE bells (
     name TEXT NOT NULL,
     type TEXT NOT NULL,
     notification TEXT NOT NULL,
-    funfact TEXT NOT NULL
+    funfact TEXT NOT NULL,
+    user_id INTEGER NOT NULL,
 );
 
 DROP TABLE IF EXISTS rewards;
@@ -43,10 +46,12 @@ CREATE TABLE sessions (
     content TEXT
 );
 
+
 DROP TABLE IF EXISTS users_bells;
 
 CREATE TABLE users_bells (
     bell_id INTEGER NOT NULL,
     user_id INTEGER NOT NULL,
+    user_email
     created TIMESTAMP DEFAULT NOW()
 );
