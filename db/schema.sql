@@ -35,9 +35,6 @@ CREATE TABLE rewards (
     id SERIAL PRIMARY KEY, 
     type TEXT,
     content TEXT
-    -- CHECK (count >= 3)
-    -- bells_id INTEGER REFERENCES bells (id)
-    -- ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS sessions;

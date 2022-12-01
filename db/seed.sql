@@ -1,7 +1,6 @@
 \c wellbell_dev;
 
--- - Must add user_id to the end of the bells data -----------------------------------------------
-INSERT INTO bells (name, type, notification, funfact, user_id) VALUES
+INSERT INTO bells (name, type, notification, funfact,) VALUES
 ('reminder1', 'Nutrition', 'Drink Water!', '64oz of Water'),
 ('reminder2', 'Nutrition', 'Treat yourself to brain food!', 'Fish Are Rich in Omega-3s'),
 ('reminder3', 'Nutrition', 'Take your vitamins!', 'B, C, D'),
