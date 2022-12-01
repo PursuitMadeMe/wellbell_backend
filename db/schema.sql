@@ -12,6 +12,9 @@ CREATE TABLE users (
     scpoints INTEGER,
     session INTEGER,
     user_id INTEGER NOT NULL,
+    physical_preferences BOOLEAN,
+    nutrition_preferences BOOLEAN,
+    selfcare_preferences BOOLEAN
 
     -- admin BOOLEAN DEFAULT false
 );
@@ -24,7 +27,6 @@ CREATE TABLE bells (
     type TEXT NOT NULL,
     notification TEXT NOT NULL,
     funfact TEXT NOT NULL,
-    user_id INTEGER NOT NULL,
 );
 
 DROP TABLE IF EXISTS rewards;
@@ -50,8 +52,12 @@ CREATE TABLE sessions (
 DROP TABLE IF EXISTS users_bells;
 
 CREATE TABLE users_bells (
-    bell_id INTEGER NOT NULL,
-    user_id INTEGER NOT NULL,
-    user_email
-    created TIMESTAMP DEFAULT NOW()
+    id SERIAL PRIMARY KEY, 
+    bell_id  INTEGER NOT NULL REFERENCES bells (id),
+    user_id INTEGER NOT NULL REFERENCES users (id)
+    ON DELETE CASCADE,
+    created TIMESTAMP DEFAULT NOW(),
+    complete BOOLEAN NOT NULL
+   
+
 );
