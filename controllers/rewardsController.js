@@ -8,7 +8,6 @@ const {
   deleteReward,
 } = require("../queries/rewards.js");
 
-//INDEX
 rewards.get("/", async (req, res) => {
   const allRewards = await getAllRewards();
   if (allRewards[0]) {
@@ -18,7 +17,6 @@ rewards.get("/", async (req, res) => {
   }
 });
 
-// Read (Singular/Specific ID)
 rewards.get("/:id", async (req, res) => {
   const { id } = req.params;
   const reward = await getReward(id);
@@ -33,7 +31,6 @@ rewards.get("/:id", async (req, res) => {
   }
 });
 
-// Create
 rewards.post("/", async (req, res) => {
   const { body } = req;
 
@@ -57,7 +54,6 @@ rewards.post("/", async (req, res) => {
   }
 });
 
-// Update
 rewards.put("/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -70,7 +66,6 @@ rewards.put("/:id", async (req, res) => {
   }
 });
 
-// Delete
 rewards.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const deletedReward = await deleteReward(id);

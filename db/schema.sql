@@ -15,8 +15,6 @@ CREATE TABLE users (
     physical_preferences BOOLEAN,
     nutrition_preferences BOOLEAN,
     selfcare_preferences BOOLEAN
-
-    -- admin BOOLEAN DEFAULT false
 );
 
 DROP TABLE IF EXISTS bells;
@@ -45,7 +43,6 @@ CREATE TABLE sessions (
     content TEXT
 );
 
-
 DROP TABLE IF EXISTS users_bells;
 
 CREATE TABLE users_bells (
@@ -55,6 +52,4 @@ CREATE TABLE users_bells (
     ON DELETE CASCADE,
     created TIMESTAMP DEFAULT NOW(),
     complete BOOLEAN NOT NULL
-   
-
 );

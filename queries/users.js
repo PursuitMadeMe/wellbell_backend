@@ -19,7 +19,6 @@ const getUser = async (id) => {
 };
 
 const createUser = async (user) => {
-  // destructuring our user object
   try {
     const { username, email, ppoints, npoints, scpoints } = user;
     const newUser = await db.one(

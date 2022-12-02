@@ -1,6 +1,5 @@
 const db = require("../db/dbConfig.js");
 
-//INDEX ROUTE
 const getAllBells = async () => {
   try {
     const allBells = await db.any("SELECT * FROM bells");
@@ -10,7 +9,6 @@ const getAllBells = async () => {
   }
 };
 
-// SHOW Route
 const getBell = async (id) => {
   try {
     const oneBell = await db.one("SELECT * FROM bells WHERE id=$1", id);
@@ -20,7 +18,6 @@ const getBell = async (id) => {
   }
 };
 
-// CREATE Route
 const createBell = async (bell) => {
   try {
     const newBell = await db.one(
@@ -34,7 +31,6 @@ const createBell = async (bell) => {
   }
 };
 
-// UPDATE Route
 const updateBell = async (bell, id) => {
   try {
     const updatedBell = await db.one(
@@ -50,7 +46,6 @@ const updateBell = async (bell, id) => {
   }
 };
 
-// DELETE Route
 const deleteBell = async (id) => {
   try {
     const deletedBell = await db.one(

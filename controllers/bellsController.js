@@ -8,7 +8,6 @@ const {
   deleteBell,
 } = require("../queries/bells.js");
 
-//INDEX
 bells.get("/", async (req, res) => {
   const allBells = await getAllBells();
   if (allBells[0]) {
@@ -18,7 +17,6 @@ bells.get("/", async (req, res) => {
   }
 });
 
-// Read (Singular/Specific ID)
 bells.get("/:id", async (req, res) => {
   const { id } = req.params;
   const bell = await getBell(id);
@@ -33,7 +31,6 @@ bells.get("/:id", async (req, res) => {
   }
 });
 
-// Create
 bells.post("/", async (req, res) => {
   const { body } = req;
 
@@ -57,7 +54,6 @@ bells.post("/", async (req, res) => {
   }
 });
 
-// Update
 bells.put("/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -70,7 +66,6 @@ bells.put("/:id", async (req, res) => {
   }
 });
 
-// Delete
 bells.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const deletedBell = await deleteBell(id);

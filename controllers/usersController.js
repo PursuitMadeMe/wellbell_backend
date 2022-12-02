@@ -1,8 +1,5 @@
 const express = require("express");
 const users = express.Router();
-
-// we are destructuring the object exported from users.js
-
 const {
   getAllUsers,
   getUser,
@@ -11,7 +8,6 @@ const {
   deleteUser,
 } = require("../queries/users.js");
 
-//INDEX
 users.get("/", async (req, res) => {
   const allUsers = await getAllUsers();
   if (allUsers[0]) {
@@ -21,7 +17,6 @@ users.get("/", async (req, res) => {
   }
 });
 
-// Read (Singular/Specific ID)
 users.get("/:id", async (req, res) => {
   const { id } = req.params;
   const user = await getUser(id);
@@ -36,7 +31,6 @@ users.get("/:id", async (req, res) => {
   }
 });
 // CAN FIND SPECIFIC USER/EMAIL THROUGH GET REQUEST
-
 // Create
 users.post("/", async (req, res) => {
   const { body } = req;
@@ -61,7 +55,6 @@ users.post("/", async (req, res) => {
   }
 });
 
-// Update
 users.put("/:id", async (req, res) => {
   const { id } = req.params;
 
@@ -74,7 +67,6 @@ users.put("/:id", async (req, res) => {
   }
 });
 
-// Delete
 users.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const deletedUser = await deleteUser(id);

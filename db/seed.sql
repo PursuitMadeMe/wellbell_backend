@@ -42,9 +42,6 @@ INSERT INTO rewards (type, content) VALUES
 ('Self-Care ','$15 off at BedBathandBeyond'),
 ('Self-Care','3% Cash Back at Sephora');
 
-
-
-
 INSERT INTO users (username,email, ppoints, npoints, scpoints, session, user_id)
 VALUES
 --- Must add session and userid into dummy data ---------------------------------------------
@@ -69,5 +66,3 @@ VALUES
 -- (5,6),
 -- (5,7);
 
--- JOIN table 
-SELECT bells.notification FROM bells INNER JOIN users ON bells.user_id=user.email
