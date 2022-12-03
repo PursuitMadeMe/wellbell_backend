@@ -5,8 +5,10 @@ CREATE DATABASE wellbell_dev;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
+    uid TEXT UNIQUE NOT NULL,
     email TEXT UNIQUE NOT NULL,
-    displayName TEXT UNIQUE NOT NULL,
+    username TEXT UNIQUE NOT NULL,
+    displayName TEXT,
     ppoints INTEGER,
     npoints INTEGER,
     scpoints INTEGER,
@@ -39,9 +41,14 @@ CREATE TABLE rewards (
 DROP TABLE IF EXISTS sessions;
 
 CREATE TABLE sessions ( 
-    id SERIAL PRIMARY KEY, 
-    type TEXT,
-    content TEXT
+    id SERIAL PRIMARY KEY,
+    uuid TEXT NOT NULL,
+    sessionnumber INTEGER NOT NULL,
+    reminder1 TEXT NOT NULL,
+    reminder2 TEXT,
+    reminder3 TEXT,
+    reminder4 TEXT,
+    reminder5 TEXT
 );
 
 DROP TABLE IF EXISTS users_bells;

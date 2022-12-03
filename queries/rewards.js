@@ -3,7 +3,7 @@ const db = require("../db/dbConfig.js");
 const getAllRewards = async () => {
   try {
     const allRewards = await db.any(
-      "SELECT * FROM rewards",
+      "SELECT * FROM rewards"
       // userId
     );
     return allRewards;
@@ -22,11 +22,11 @@ const getReward = async (id) => {
 };
 
 const createReward = async (reward) => {
-  const { type, content } = reward;
+  const { type, content, code } = reward;
   try {
     const createdReward = await db.one(
-      "INSERT INTO rewards (user_id, type, content) VALUES ($1, $2, $3) RETURNING *",
-      [user_id, type, content]
+      "INSERT INTO rewards (type, content, code) VALUES ($1, $2, $3) RETURNING *",
+      [type, content, code]
     );
     return createdReward;
   } catch (err) {
@@ -51,8 +51,8 @@ const updateReward = async (id, reward) => {
 
   try {
     const updatedReward = await db.one(
-      "UPDATE rewards SET user_id=$1, type=$2, content=$3 WHERE id=$4 RETURNING *",
-      [user_id, type, content, id]
+      "UPDATE rewards SET type=$1, content=$2, code=$3 WHERE id=$4 RETURNING *",
+      [type, content, code, id]
     );
     return updatedReward;
   } catch (err) {
