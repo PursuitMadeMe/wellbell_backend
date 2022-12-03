@@ -51,17 +51,17 @@ VALUES
 -- ('person4@gmail.com','Spencer', 6, 13, 20),
 -- ('person5@gmail.com','Zane', 14, 18, 17);
 
-INSERT INTO users_bells (user_id, bell_id)
+INSERT INTO users_bells (user_id, session_id)
 VALUES
-(1,1),
-(1,1),
-(2,1),
-(2,2),
-(3,3),
-(3,4),
-(4,5),
-(5,6),
-(5,7);
+(1,1);
+-- (1,1)
+-- (2,1),
+-- (2,2),
+-- (3,3),
+-- (3,4),
+-- (4,5),
+-- (5,6),
+-- (5,7);
 
 SELECT * FROM users_bells;
 
