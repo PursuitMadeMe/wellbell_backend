@@ -15,7 +15,8 @@ INSERT INTO bells (name, type, notification, funfact) VALUES
 ('reminder12', 'Self-Care', 'Meditate for 5-10 minutes!', 'Meditation Calms the Physical and Psychological Soul'),
 ('reminder13', 'Self-Care', 'Look In The Mirror and Tell Yourself 5 Nice Things', 'Positive Affirmations Will Make You Feel Better'),
 ('reminder14', 'Self-Care', 'Call or text someone you love', 'Knowing Someone is Listening Will Make You Feel Better'),
-('reminder15', 'Self-Care', 'Dont check any social media platforms for the next hour!', 'Social Media Feeds Will Slowly Decrease Your Energy');
+('reminder15', 'Self-Care', 'Dont check any social media platforms for the next hour!', 'Social Media Feeds Will Slowly Decrease Your Energy'),
+('reminder16', 'Self-Care', 'STOP WHAT YOU ARE DOING! Listen to Your Favorite Song!', 'Hearing Your Favorite Song Will Increase Dopamine - AKA the Feel-Good Chemical - Levels in your Brain');
 
 
 
@@ -25,27 +26,27 @@ INSERT INTO bells (name, type, notification, funfact) VALUES
 -- SELF-CARE [   4  ]
 
 
-INSERT INTO rewards (type, content) VALUES
-('Physical','10% off Planet fitness'),
-('Physical','20% off Zumba class'),
-('Physical','15% off Yoga class'),
-('Physical','10% off Pilates'),
-('Physical','$20 off Peloton'),
-('Nutrition ','10% off of GNC'),
-('Nutrition ','$10 off over $75.00 purchase - Whole Foods'),
-('Nutrition ','10% off Fresh Direct delivery'),
-('Nutrition ','$2.50 off Cliff Bar'),
-('Nutrition ','$2.00 off Smart Water 1-Liter bottle'),
-('Self-Care','5% off SpaFinder Participants'),
-('Self-Care ','10% off selfcareisforeveryone.com'),
-('Self-Care','$10 off at Bed, Bath and Body Works'),
-('Self-Care ','$15 off at BedBathandBeyond'),
-('Self-Care','3% Cash Back at Sephora');
+INSERT INTO rewards (type, content, code) VALUES
+('Physical','10% off Planet fitness', 'SHOPPF15'),
+('Physical','20% off Zumba class'. 'b1summer60'),
+('Physical','15% off Yogaaccessories.com', 'TOGETHER15'),
+('Physical','10% off Pilates', 'Eb3sA4QXw5DDAnbo'),
+('Physical','$100 off Peleton Bike', 'W86KYK'),
+('Nutrition ','10% off of GNC', 'ZZMSaTBAvGf9G7fC'),
+('Nutrition ','$10 off over $75.00 purchase - Whole Foods', 'yaywholefoods'),
+('Nutrition ','10% off Fresh Direct delivery', 'FRESH18'),
+('Nutrition ','$2.50 off Cliff Bar', 'YWBCQTHW6KFGKDJ2'),
+('Nutrition ','$2.00 off Smart Water 1-Liter bottle'. 'ucomar'),
+('Self-Care','5% off SpaFinder Participants', 'SPAFINDER5'),
+('Self-Care ','10% off selfcareisforeveryone.com', 'selfcare10'),
+('Self-Care','$10 off at Bed, Bath and Body Works', 'bbb10off'),
+('Self-Care ','$15 off at BedBathandBeyond', '15bedbath'),
+('Self-Care','3% Cash Back at Sephora', 'Sephora3back');
 
 -- .. USER INFO: uid, firstName, lastName,
-INSERT INTO users (email, username, ppoints, npoints, scpoints)
+INSERT INTO users (email, displayName, ppoints, npoints, scpoints)
 VALUES
-('person1@gmail.com','Jede2', 2, 20, 8);
+('person1@gmail.com','Jede Brahma', 2, 20, 8);
 -- ('person2@gmail.com','John', 20, 9, 11),
 -- ('person3@gmail.com','Kim', 3, 12, 20),
 -- ('person4@gmail.com','Spencer', 6, 13, 20),

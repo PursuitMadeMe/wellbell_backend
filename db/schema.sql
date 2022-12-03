@@ -5,8 +5,8 @@ CREATE DATABASE wellbell_dev;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username TEXT UNIQUE NOT NULL,
     email TEXT UNIQUE NOT NULL,
+    displayName TEXT UNIQUE NOT NULL,
     ppoints INTEGER,
     npoints INTEGER,
     scpoints INTEGER,
@@ -29,7 +29,8 @@ DROP TABLE IF EXISTS rewards;
 CREATE TABLE rewards ( 
     id SERIAL PRIMARY KEY, 
     type TEXT,
-    content TEXT
+    content TEXT,
+    code TEXT
     -- CHECK (count >= 3)
     -- bells_id INTEGER REFERENCES bells (id)
     -- ON DELETE CASCADE
