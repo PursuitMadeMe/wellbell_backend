@@ -43,11 +43,10 @@ CREATE TABLE sessions (
     content TEXT
 );
 
-DROP TABLE IF EXISTS users_bells;
+DROP TABLE IF EXISTS users_sessions;
 
-CREATE TABLE users_bells (
-    bell_id INTEGER NOT NULL,
-    user_id INTEGER NOT NULL,
-    session_id INTEGER NOT NULL,
+CREATE TABLE users_sessions (
+    user_id INTEGER ,
+    session_id INTEGER,
     created TIMESTAMP DEFAULT NOW()
 );

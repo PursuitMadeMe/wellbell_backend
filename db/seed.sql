@@ -51,7 +51,7 @@ VALUES
 -- ('person4@gmail.com','Spencer', 6, 13, 20),
 -- ('person5@gmail.com','Zane', 14, 18, 17);
 
-INSERT INTO users_bells (user_id, session_id)
+INSERT INTO users_sessions (user_id, session_id)
 VALUES
 (1,1);
 -- (1,1)
@@ -63,6 +63,6 @@ VALUES
 -- (5,6),
 -- (5,7);
 
-SELECT * FROM users_bells;
+-- SELECT * FROM users_sessions;
 
-SELECT * FROM users_bells JOIN 
+SELECT * FROM users_sessions JOIN sessions ON sessions.id = users_sessions.session_id JOIN users ON users.id = users_sessions.user_id;
