@@ -48,5 +48,6 @@ DROP TABLE IF EXISTS users_bells;
 CREATE TABLE users_bells (
     bell_id INTEGER NOT NULL,
     user_id INTEGER NOT NULL,
+    session_id INTEGER NOT NULL,
     created TIMESTAMP DEFAULT NOW()
 );
