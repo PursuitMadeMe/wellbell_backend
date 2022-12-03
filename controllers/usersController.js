@@ -40,7 +40,7 @@ users.get("/:id", async (req, res) => {
 // Create
 users.post("/", async (req, res) => {
   const { body } = req;
-// ONLY a successful post will return an object with a key of id
+  // ONLY a successful post will return an object with a key of id
   body.email = body;
 
   try {

@@ -21,10 +21,11 @@ const getUser = async (id) => {
 const createUser = async (user) => {
   // destructuring our user object
   try {
-    const { username, email, ppoints, npoints, scpoints } = user;
+    const { uid, email, username, displayName, ppoints, npoints, scpoints } =
+      user;
     const newUser = await db.one(
-      "INSERT INTO users (username, email, ppoints, npoints, scpoints) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [username, email, ppoints, npoints, scpoints]
+      "INSERT INTO users (uid, email, username, displayName, ppoints, npoints, scpoints) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+      [uid, email, username, displayName, email, ppoints, npoints, scpoints]
     );
     return newUser;
   } catch (err) {
@@ -35,10 +36,11 @@ const createUser = async (user) => {
 // we need to make sure we pass our arguments in the correct order when updating
 const updateUser = async (user, id) => {
   try {
-    const { username, email, ppoints, npoints, scpoints } = user;
+    const { uid, email, username, displayName, ppoints, npoints, scpoints } =
+      user;
     const updatedUser = await db.one(
-      "UPDATE users SET username=$1, email=$2, admin=$3, verified=$4 WHERE id=$5 RETURNING *",
-      [username, email, ppoints, npoints, scpoints, id]
+      "UPDATE users SET uid=$1, email=$2, username=$3, displayName=$4, ppoints=$5, npoints=$6, scpoints=$7 WHERE id=$8 RETURNING *",
+      [uid, email, username, displayName, ppoints, npoints, scpoints, id]
     );
     return updatedUser;
   } catch (err) {
