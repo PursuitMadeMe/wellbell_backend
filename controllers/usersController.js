@@ -24,10 +24,10 @@ users.get("/", async (req, res) => {
 });
 
 // Read (Singular/Specific ID)
-users.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  const user = await getUser(id);
-  if (user.id) {
+users.get("/:user_id", async (req, res) => {
+  const { user_id } = req.params;
+  const user = await getUser(user_id);
+  if (user.user_id) {
     res.json({ payload: user, success: true });
   } else {
     res.status(404).json({
@@ -39,7 +39,7 @@ users.get("/:id", async (req, res) => {
 });
 // CAN FIND SPECIFIC USER/EMAIL THROUGH GET REQUEST
 
-users.get("/:id/bells", async (req, res) => {
+users.get("/:user_id/bells", async (req, res) => {
   const { id } = req.params;
   const usersBells = await getAllBellsForUser(id);
   res.json(usersBells);

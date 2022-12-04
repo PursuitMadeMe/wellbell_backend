@@ -65,20 +65,22 @@ const updateUser = async (user, user_id) => {
     const {
       email,
       username,
+      firstname,
+      lastname,
       physicalpoints,
       nutritionalpoints,
       selfcarepoints,
       physicalpreferences,
       nutritionalpreferences,
       mentalpreferences,
-      user_id,
     } = user;
     const updatedUser = await db.one(
       "UPDATE users SET email=$1, username=$2, firstname=$3, lastname=$4, physicalpoints=$5, nutritionalpoints=$6, selfcarepoints=$7, physicalpreferences=$8, nutritionalpreferences=$9, mentalpreferences=$10 WHERE user_id=$11 RETURNING *",
       [
         email,
         username,
-        displayName,
+        firstname,
+        lastname,
         physicalpoints,
         nutritionalpoints,
         selfcarepoints,
@@ -97,7 +99,7 @@ const updateUser = async (user, user_id) => {
 const deleteUser = async (user_id) => {
   try {
     const deletedUser = await db.one(
-      "DELETE FROM users WHERE id=$1 RETURNING *",
+      "DELETE FROM users WHERE user_id=$1 RETURNING *",
       user_id
     );
     return deletedUser;
