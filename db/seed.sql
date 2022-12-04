@@ -4,7 +4,7 @@
 INSERT INTO bells ("type", "message", "funfact") VALUES
 ('Nutrition', 'Drink Water!', '64oz of Water are Optimal.'),
 ('Nutrition', 'Treat Yourself to Brain Food!', 'Fish Are Rich in Omega-3s.'),
-('Nutrition', 'Take Your Vitamins!', 'B, C, D'),
+('Nutrition', 'Take Your Vitamins!', 'The Eight B Vitamins (thiamin, riboflavin, niacin, pantothenic acid, B6, biotin, folate and B12) provide the most energy.'),
 ('Nutrition', 'Take Your Time and Enjoy Your Meal!', 'It Takes 7 Minutes Until It Hits Your Stomach.'),
 ('Nutrition', 'Reach For A Healthy Treat!', 'Yogurt With Granola Packs Protein and Carbohydrates for Refueling.'),
 ('Physical', 'Take-4 Big Belly Breath', 'Breathe In For 4 Seconds, Hold for 7, Exhale for 8.'),
