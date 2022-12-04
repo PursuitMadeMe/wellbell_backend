@@ -11,7 +11,10 @@ const getAllUsers = async () => {
 
 const getUser = async (user_id) => {
   try {
-    const oneUser = await db.one("SELECT * FROM users WHERE user_id=$1", user_id);
+    const oneUser = await db.one(
+      "SELECT * FROM users WHERE user_id=$1",
+      user_id
+    );
     return oneUser;
   } catch (err) {
     return err;
@@ -21,10 +24,31 @@ const getUser = async (user_id) => {
 const createUser = async (user) => {
   // destructuring our user object
   try {
-    const { user_id, email, username, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences } = user;
+    const {
+      user_id,
+      email,
+      username,
+      physicalpoints,
+      nutritionalpoints,
+      selfcarepoints,
+      physicalpreferences,
+      nutritionalpreferences,
+      mentalpreferences,
+    } = user;
     const newUser = await db.one(
       "INSERT INTO users (user_id, email, username, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-      [user_id, email, username, email, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences]
+      [
+        user_id,
+        email,
+        username,
+        email,
+        physicalpoints,
+        nutritionalpoints,
+        selfcarepoints,
+        physicalpreferences,
+        nutritionalpreferences,
+        mentalpreferences,
+      ]
     );
     return newUser;
   } catch (err) {
@@ -35,10 +59,31 @@ const createUser = async (user) => {
 // we need to make sure we pass our arguments in the correct order when updating
 const updateUser = async (user, user_id) => {
   try {
-    const { email, username, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences, user_id } = user;
+    const {
+      email,
+      username,
+      physicalpoints,
+      nutritionalpoints,
+      selfcarepoints,
+      physicalpreferences,
+      nutritionalpreferences,
+      mentalpreferences,
+      user_id,
+    } = user;
     const updatedUser = await db.one(
       "UPDATE users SET email=$1, username=$2, physicalpoints=$3, nutritionalpoints=$4, selfcarepoints=$5, physicalpreferences=$6, nutritionalpreferences=$7, mentalpreferences=$8 WHERE user_id=$9 RETURNING *",
-      [email, username, displayName, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences, user_id]
+      [
+        email,
+        username,
+        displayName,
+        physicalpoints,
+        nutritionalpoints,
+        selfcarepoints,
+        physicalpreferences,
+        nutritionalpreferences,
+        mentalpreferences,
+        user_id,
+      ]
     );
     return updatedUser;
   } catch (err) {
@@ -73,7 +118,8 @@ const getAllBellsForUser = async (user_id) => {
                 users.user_id = users_bells.user_id
             WHERE
                 users_bells.user_id = $1`,
-      user_id);
+      user_id
+    );
     return bellsByUser;
   } catch (err) {
     return err;

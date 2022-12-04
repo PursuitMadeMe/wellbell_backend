@@ -22,8 +22,8 @@ DROP TABLE IF EXISTS bells;
 CREATE TABLE bells (
     id SERIAL PRIMARY KEY,
     type TEXT NOT NULL,
-    message TEXT,
-    funfact TEXT
+    message TEXT NOT NULL,
+    funfact TEXT NOT NULL
     -- user_id TEXT FOREIGN KEY REFERENCES users(user_id)
 );
 
