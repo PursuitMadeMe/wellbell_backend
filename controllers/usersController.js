@@ -5,12 +5,12 @@ const users = express.Router();
 
 const {
   getAllUsers,
-  getAllBellsForUser,
-  addNewBellForUser,
   getUser,
   createUser,
   updateUser,
   deleteUser,
+  getAllBellsForUser,
+  addNewBellForUser,
 } = require("../queries/users.js");
 
 //INDEX
@@ -59,11 +59,11 @@ users.post("/:id/bells/:bellId", async (req, res) => {
 users.post("/", async (req, res) => {
   const { body } = req;
   // ONLY a successful post will return an object with a key of id
-  body.email = body;
+  body.user_id = body;
 
   try {
     const createdUser = await createUser(body.payload);
-    if (createdUser.id) {
+    if (createdUser.user_id) {
       res.status(200).json({
         success: true,
         payload: createdUser,
@@ -85,7 +85,7 @@ users.put("/:id", async (req, res) => {
 
   const updatedUser = await updateUser(req.body, id);
   console.log(updatedUser);
-  if (updatedUser.id) {
+  if (updatedUser.user_id) {
     res.status(200).json(updatedUser);
   } else {
     res.status(404).json({ error: "user not found" });
@@ -96,7 +96,7 @@ users.put("/:id", async (req, res) => {
 users.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const deletedUser = await deleteUser(id);
-  if (deletedUser.id) {
+  if (deletedUser.user_id) {
     res.status(200).json({ payload: deletedUser, success: true });
   } else {
     res.status(404).json({ payload: "User not found", success: false });

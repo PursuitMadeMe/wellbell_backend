@@ -28,6 +28,8 @@ const createUser = async (user) => {
       user_id,
       email,
       username,
+      firstname,
+      lastname,
       physicalpoints,
       nutritionalpoints,
       selfcarepoints,
@@ -36,12 +38,13 @@ const createUser = async (user) => {
       mentalpreferences,
     } = user;
     const newUser = await db.one(
-      "INSERT INTO users (user_id, email, username, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+      "INSERT INTO users (user_id, email, username, firstname, lastname, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *",
       [
         user_id,
         email,
         username,
-        email,
+        firstname,
+        lastname,
         physicalpoints,
         nutritionalpoints,
         selfcarepoints,
@@ -71,7 +74,7 @@ const updateUser = async (user, user_id) => {
       user_id,
     } = user;
     const updatedUser = await db.one(
-      "UPDATE users SET email=$1, username=$2, physicalpoints=$3, nutritionalpoints=$4, selfcarepoints=$5, physicalpreferences=$6, nutritionalpreferences=$7, mentalpreferences=$8 WHERE user_id=$9 RETURNING *",
+      "UPDATE users SET email=$1, username=$2, firstname=$3, lastname=$4, physicalpoints=$5, nutritionalpoints=$6, selfcarepoints=$7, physicalpreferences=$8, nutritionalpreferences=$9, mentalpreferences=$10 WHERE user_id=$11 RETURNING *",
       [
         email,
         username,
@@ -129,7 +132,7 @@ const getAllBellsForUser = async (user_id) => {
 const addNewBellForUser = async (user_id, bell_id) => {
   try {
     // db.none returns NULL ALWAYS
-    const addedBell = await db.oneOrNone(
+    const addedBell = await db.one(
       `INSERT INTO users_bells (user_id, bell_id) VALUES ($1, $2) RETURNING *`,
       [user_id, bell_id]
     );

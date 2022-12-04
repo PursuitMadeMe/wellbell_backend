@@ -37,9 +37,9 @@ INSERT INTO rewards ("type", "content", "code") VALUES
 ('Self-Care', '3% Cash Back at Sephora', 'sephora3cb');
 
 
-INSERT INTO users ("user_id", "email", "username", "physicalpoints", "nutritionalpoints", "selfcarepoints", "physicalpreferences", "nutritionalpreferences", "mentalpreferences") VALUES 
-('YNWTla5dkzVnleNytVIH93DYFNf1', 'spencer.san@gmail.com', 'sbsimonsays', '3', '11', '20', 'true', 'true', 'true'),
-('uGemip0jhtN1JK5uIoV0S2bNKnt2', 'kenyetttagriffin@pursuit.org', 'kgriffin', '4', '20', '12', 'true', 'false', 'true');
+INSERT INTO users ("user_id", "email", "username", "firstname", "lastname", "physicalpoints", "nutritionalpoints", "selfcarepoints", "physicalpreferences", "nutritionalpreferences", "mentalpreferences") VALUES 
+('YNWTla5dkzVnleNytVIH93DYFNf1', 'spencer.san@gmail.com', 'sbsimonsays', 'Spencer', 'Simon', '3', '11', '20', 'true', 'true', 'true'),
+('uGemip0jhtN1JK5uIoV0S2bNKnt2', 'kenyetttagriffin@pursuit.org', 'kgriffin', 'Kim', 'Griffin', '4', '20', '12', 'true', 'false', 'true');
 
 
 INSERT INTO users_bells ("user_id", "bell_id") VALUES
