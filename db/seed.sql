@@ -52,7 +52,7 @@ INSERT INTO users_bells ("user_id", "bell_id") VALUES
 
 
 INSERT INTO users_rewards ("user_id", "reward_id") VALUES
-('YNWTla5dkzVnleNytVIH93DYFNf1', '1'),
+('YNWTla5dkzVnleNytVIH93DYFNf1', '14'),
 ('uGemip0jhtN1JK5uIoV0S2bNKnt2', '7');
 
 
@@ -60,3 +60,8 @@ SELECT * FROM users_bells
 JOIN bells ON users_bells.bell_id = bells.id
 JOIN users 
 ON users.user_id = users_bells.user_id;
+
+SELECT * FROM users_rewards 
+JOIN rewards ON users_rewards.reward_id = rewards.id
+JOIN users 
+ON users.user_id = users_rewards.user_id;
