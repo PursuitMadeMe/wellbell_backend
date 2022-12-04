@@ -4,7 +4,6 @@ const getAllRewards = async () => {
   try {
     const allRewards = await db.any(
       "SELECT * FROM rewards"
-      // userId
     );
     return allRewards;
   } catch (err) {
@@ -22,13 +21,26 @@ const getReward = async (id) => {
 };
 
 const createReward = async (reward) => {
-  const { type, content, code } = reward;
+  const { user_id, type, content, code } = reward;
   try {
     const createdReward = await db.one(
-      "INSERT INTO rewards (type, content, code) VALUES ($1, $2, $3) RETURNING *",
-      [type, content, code]
+      "INSERT INTO rewards (user_id, type, content, code) VALUES ($1, $2, $3, $4) RETURNING *",
+      [user_id, type, content, code]
     );
     return createdReward;
+  } catch (err) {
+    return err;
+  }
+};
+
+const updateReward = async (user_id, reward) => {
+  const { user_id, type, content, code } = reward;
+  try {
+    const updatedReward = await db.one(
+      "UPDATE rewards SET user_id=$1, type=$2, content=$3, code=$4 WHERE id=$5 RETURNING *",
+      [user_id, type, content, code, id]
+    );
+    return updatedReward;
   } catch (err) {
     return err;
   }
@@ -46,19 +58,6 @@ const deleteReward = async (id) => {
   }
 };
 
-const updateReward = async (id, reward) => {
-  const { user_id, type, content } = reward;
-
-  try {
-    const updatedReward = await db.one(
-      "UPDATE rewards SET type=$1, content=$2, code=$3 WHERE id=$4 RETURNING *",
-      [type, content, code, id]
-    );
-    return updatedReward;
-  } catch (err) {
-    return err;
-  }
-};
 
 module.exports = {
   getAllRewards,

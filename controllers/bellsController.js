@@ -36,9 +36,7 @@ bells.get("/:id", async (req, res) => {
 // Create
 bells.post("/", async (req, res) => {
   const { body } = req;
-
-  body.name = body;
-
+  body.message = body;
   try {
     const createdBell = await createBell(body.payload);
     if (createdBell.id) {
@@ -49,7 +47,7 @@ bells.post("/", async (req, res) => {
     } else {
       res.status(422).json({
         success: false,
-        payload: "Must include name field",
+        payload: "Must include message field",
       });
     }
   } catch (err) {

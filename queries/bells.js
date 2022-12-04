@@ -24,8 +24,8 @@ const getBell = async (id) => {
 const createBell = async (bell) => {
   try {
     const newBell = await db.one(
-      "INSERT INTO bells (name, type, notification, funfact) VALUES($1, $2, $3, $4) RETURNING *",
-      [bell.name, bell.type, bell.notification, bell.funfact]
+      "INSERT INTO bells (type, message, funfact) VALUES($1, $2, $3) RETURNING *",
+      [bell.type, bell.message, bell.funfact]
     );
     console.log("NEW BELL : ", newBell);
     return newBell;
@@ -38,14 +38,13 @@ const createBell = async (bell) => {
 const updateBell = async (bell, id) => {
   try {
     const updatedBell = await db.one(
-      "UPDATE bells SET name=$1, type=$2, notification=$3, funfact=$4 WHERE id=$5 RETURNING *",
-      [bell.name, bell.type, bell.notification, bell.funfact, id]
+      "UPDATE bells SET type=$1, message=$2, funfact=$3 WHERE id=$5 RETURNING *",
+      [bell.type, bell.message, bell.funfact, id]
     );
     console.log(updatedBell, "Well Bell updated");
     return updatedBell;
   } catch (error) {
     console.log("NO UPDATE");
-
     return error;
   }
 };
