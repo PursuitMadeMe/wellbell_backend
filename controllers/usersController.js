@@ -49,10 +49,10 @@ users.post("/:id/bells/:bellId", async (req, res) => {
   const { id, bellId } = req.params;
   const successfulAdd = await addNewBellForUser(id, bellId);
   if (successfulAdd) {
-    res.status(201).json({ message: "Bell for user created!" })
+    res.status(201).json({ message: "Bell for user created!" });
   } else {
-      res.status(422).json({ error: "unprocessable entity" });
-    }
+    res.status(422).json({ error: "unprocessable entity" });
+  }
 });
 
 // Create

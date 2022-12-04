@@ -2,9 +2,7 @@ const db = require("../db/dbConfig.js");
 
 const getAllRewards = async () => {
   try {
-    const allRewards = await db.any(
-      "SELECT * FROM rewards"
-    );
+    const allRewards = await db.any("SELECT * FROM rewards");
     return allRewards;
   } catch (err) {
     return err;
@@ -34,7 +32,7 @@ const createReward = async (reward) => {
 };
 
 const updateReward = async (id, reward) => {
-  const { id, type, content, code } = reward;
+  const { type, content, code } = reward;
   try {
     const updatedReward = await db.one(
       "UPDATE rewards SET type=$1, content=$2, code=$3 WHERE id=$4 RETURNING *",
@@ -57,7 +55,6 @@ const deleteReward = async (id) => {
     return err;
   }
 };
-
 
 module.exports = {
   getAllRewards,
