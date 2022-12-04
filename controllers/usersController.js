@@ -5,6 +5,8 @@ const users = express.Router();
 
 const {
   getAllUsers,
+  getAllBellsForUser,
+  addNewBellForUser,
   getUser,
   createUser,
   updateUser,
@@ -36,6 +38,22 @@ users.get("/:id", async (req, res) => {
   }
 });
 // CAN FIND SPECIFIC USER/EMAIL THROUGH GET REQUEST
+
+users.get("/:id/bells", async (req, res) => {
+  const { id } = req.params;
+  const usersBells = await getAllBellsForUser(id);
+  res.json(usersBells);
+});
+
+users.post("/:id/bells/:bellId", async (req, res) => {
+  const { id, bellId } = req.params;
+  const successfulAdd = await addNewBellForUser(id, bellId);
+  if (successfulAdd) {
+    res.status(201).json({ message: "Bell for user created!" })
+  } else {
+      res.status(422).json({ error: "unprocessable entity" });
+    }
+});
 
 // Create
 users.post("/", async (req, res) => {

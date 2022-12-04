@@ -9,9 +9,9 @@ const getAllUsers = async () => {
   }
 };
 
-const getUser = async (id) => {
+const getUser = async (user_id) => {
   try {
-    const oneUser = await db.one("SELECT * FROM users WHERE id=$1", id);
+    const oneUser = await db.one("SELECT * FROM users WHERE user_id=$1", user_id);
     return oneUser;
   } catch (err) {
     return err;
@@ -21,11 +21,10 @@ const getUser = async (id) => {
 const createUser = async (user) => {
   // destructuring our user object
   try {
-    const { uid, email, username, displayName, ppoints, npoints, scpoints } =
-      user;
+    const { user_id, email, username, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences } = user;
     const newUser = await db.one(
-      "INSERT INTO users (uid, email, username, displayName, ppoints, npoints, scpoints) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
-      [uid, email, username, displayName, email, ppoints, npoints, scpoints]
+      "INSERT INTO users (user_id, email, username, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+      [user_id, email, username, email, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences]
     );
     return newUser;
   } catch (err) {
@@ -34,13 +33,12 @@ const createUser = async (user) => {
 };
 
 // we need to make sure we pass our arguments in the correct order when updating
-const updateUser = async (user, id) => {
+const updateUser = async (user, user_id) => {
   try {
-    const { uid, email, username, displayName, ppoints, npoints, scpoints } =
-      user;
+    const { email, username, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences, user_id } = user;
     const updatedUser = await db.one(
-      "UPDATE users SET uid=$1, email=$2, username=$3, displayName=$4, ppoints=$5, npoints=$6, scpoints=$7 WHERE id=$8 RETURNING *",
-      [uid, email, username, displayName, ppoints, npoints, scpoints, id]
+      "UPDATE users SET email=$1, username=$2, physicalpoints=$3, nutritionalpoints=$4, selfcarepoints=$5, physicalpreferences=$6, nutritionalpreferences=$7, mentalpreferences=$8 WHERE user_id=$9 RETURNING *",
+      [email, username, displayName, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences, user_id]
     );
     return updatedUser;
   } catch (err) {
@@ -48,11 +46,11 @@ const updateUser = async (user, id) => {
   }
 };
 
-const deleteUser = async (id) => {
+const deleteUser = async (user_id) => {
   try {
     const deletedUser = await db.one(
       "DELETE FROM users WHERE id=$1 RETURNING *",
-      id
+      user_id
     );
     return deletedUser;
   } catch (err) {
@@ -60,38 +58,34 @@ const deleteUser = async (id) => {
   }
 };
 
-const getAllBellsForUser = async (id) => {
+const getAllBellsForUser = async (user_id) => {
   try {
     const bellsByUser = db.any(
       `SELECT 
-                bookmark_id, user_id, name, is_favorite, category
-            FROM
                 users_bells
-            JOIN
-                users
-            ON
-                users.id = users_id.user_bells
             JOIN
                 bells
             ON
-                bells.id = user_bells.bell_id
+                users_bells.bell_id = bells.id
+            JOIN
+                users
+            ON
+                users.user_id = users_bells.user_id
             WHERE
-                users_id.user_bells = $1
-            `,
-      id
-    );
+                users_bells.user_id = $1`,
+      user_id);
     return bellsByUser;
   } catch (err) {
     return err;
   }
 };
 
-const addNewBellForUser = async (userId, bellId) => {
+const addNewBellForUser = async (user_id, bell_id) => {
   try {
     // db.none returns NULL ALWAYS
     const addedBell = await db.oneOrNone(
       `INSERT INTO users_bells (user_id, bell_id) VALUES ($1, $2) RETURNING *`,
-      [userId, bellId]
+      [user_id, bell_id]
     );
     return addedBell;
   } catch (err) {
