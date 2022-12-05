@@ -27,10 +27,14 @@ socketIO.on("connection", (socket) => {
 const bellsController = require("./controllers/bellsController.js");
 const rewardsController = require("./controllers/rewardsController.js");
 const usersController = require("./controllers/usersController.js");
+const users_bellsController = require("./controllers/users_bellsController.js");
+const users_rewardsController = require("./controllers/users_rewardsController.js");
 
 app.use("/bells", bellsController);
 app.use("/rewards", rewardsController);
 app.use("/users", usersController);
+app.use("/users_bells", users_bellsController);
+app.use("/users_rewards", users_rewardsController);
 
 // Allows requests from other origins (e.g. our REACT APP)
 // PARSES JSON FOR US SO WE CAN USE IT.
@@ -42,13 +46,13 @@ app.get("/", (req, res) => {
 
 app.get("/api", (req, res) => {
   res.json({
-    message: "Hello world",
+    message: "Hello World",
   });
 });
 
 //404 PAGE
 app.get("*", (req, res) => {
-  res.status(404).send("page not found");
+  res.status(404).send("PAGE NOT FOUND");
 });
 
 //EXPORT

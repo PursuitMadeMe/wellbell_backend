@@ -26,7 +26,7 @@ CREATE TABLE bells (
     type TEXT NOT NULL,
     message TEXT NOT NULL,
     funfact TEXT NOT NULL
-    -- user_id TEXT FOREIGN KEY REFERENCES users(user_id)
+    -- user_id TEXT FOREIGN KEY REFERENCES user(user_id)
 );
 
 DROP TABLE IF EXISTS rewards;
@@ -36,21 +36,21 @@ CREATE TABLE rewards (
     type TEXT,
     content TEXT,
     code TEXT
-    -- user_id TEXT FOREIGN KEY REFERENCES users(user_id)
+    -- user_id TEXT FOREIGN KEY REFERENCES user(user_id)
 );
 
 DROP TABLE IF EXISTS users_bells;
 
 CREATE TABLE users_bells (
-    bell_id INTEGER NOT NULL,
     user_id TEXT NOT NULL,
+    bell_id INTEGER NOT NULL,
     created TIMESTAMP DEFAULT NOW()
 );
 
 DROP TABLE IF EXISTS users_rewards;
 
 CREATE TABLE users_rewards (
-    reward_id INTEGER NOT NULL,
     user_id TEXT NOT NULL,
+    reward_id INTEGER NOT NULL,
     created TIMESTAMP DEFAULT NOW()
 );

@@ -65,20 +65,22 @@ const updateUser = async (user, user_id) => {
     const {
       email,
       username,
+      firstname,
+      lastname,
       physicalpoints,
       nutritionalpoints,
       selfcarepoints,
       physicalpreferences,
       nutritionalpreferences,
       mentalpreferences,
-      user_id,
     } = user;
     const updatedUser = await db.one(
       "UPDATE users SET email=$1, username=$2, firstname=$3, lastname=$4, physicalpoints=$5, nutritionalpoints=$6, selfcarepoints=$7, physicalpreferences=$8, nutritionalpreferences=$9, mentalpreferences=$10 WHERE user_id=$11 RETURNING *",
       [
         email,
         username,
-        displayName,
+        firstname,
+        lastname,
         physicalpoints,
         nutritionalpoints,
         selfcarepoints,
@@ -97,7 +99,7 @@ const updateUser = async (user, user_id) => {
 const deleteUser = async (user_id) => {
   try {
     const deletedUser = await db.one(
-      "DELETE FROM users WHERE id=$1 RETURNING *",
+      "DELETE FROM users WHERE user_id=$1 RETURNING *",
       user_id
     );
     return deletedUser;
@@ -106,41 +108,41 @@ const deleteUser = async (user_id) => {
   }
 };
 
-const getAllBellsForUser = async (user_id) => {
-  try {
-    const bellsByUser = db.any(
-      `SELECT 
-                users_bells
-            JOIN
-                bells
-            ON
-                users_bells.bell_id = bells.id
-            JOIN
-                users
-            ON
-                users.user_id = users_bells.user_id
-            WHERE
-                users_bells.user_id = $1`,
-      user_id
-    );
-    return bellsByUser;
-  } catch (err) {
-    return err;
-  }
-};
+// const getAllBellsForUser = async (user_id) => {
+//   try {
+//     const bellsByUser = db.any(
+//       `SELECT
+//                 users_bells
+//             JOIN
+//                 bells
+//             ON
+//                 users_bells.bell_id = bells.id
+//             JOIN
+//                 users
+//             ON
+//                 users.user_id = users_bells.user_id
+//             WHERE
+//                 users_bells.user_id = $1`,
+//       user_id
+//     );
+//     return bellsByUser;
+//   } catch (err) {
+//     return err;
+//   }
+// };
 
-const addNewBellForUser = async (user_id, bell_id) => {
-  try {
-    // db.none returns NULL ALWAYS
-    const addedBell = await db.one(
-      `INSERT INTO users_bells (user_id, bell_id) VALUES ($1, $2) RETURNING *`,
-      [user_id, bell_id]
-    );
-    return addedBell;
-  } catch (err) {
-    return err;
-  }
-};
+// const addNewBellForUser = async (user_id, bell_id) => {
+//   try {
+//     // db.none returns NULL ALWAYS
+//     const addedBell = await db.one(
+//       `INSERT INTO users_bells (user_id, bell_id) VALUES ($1, $2) RETURNING *`,
+//       [user_id, bell_id]
+//     );
+//     return addedBell;
+//   } catch (err) {
+//     return err;
+//   }
+// };
 
 module.exports = {
   getAllUsers,
@@ -148,6 +150,6 @@ module.exports = {
   deleteUser,
   updateUser,
   createUser,
-  getAllBellsForUser,
-  addNewBellForUser,
+  // getAllBellsForUser,
+  // addNewBellForUser,
 };
