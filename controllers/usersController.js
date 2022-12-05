@@ -9,8 +9,8 @@ const {
   createUser,
   updateUser,
   deleteUser,
-  getAllBellsForUser,
-  addNewBellForUser,
+  // getAllBellsForUser,
+  // addNewBellForUser,
 } = require("../queries/users.js");
 
 //INDEX
@@ -37,23 +37,24 @@ users.get("/:user_id", async (req, res) => {
     });
   }
 });
+
 // CAN FIND SPECIFIC USER/EMAIL THROUGH GET REQUEST
 
-users.get("/:user_id/bells", async (req, res) => {
-  const { id } = req.params;
-  const usersBells = await getAllBellsForUser(id);
-  res.json(usersBells);
-});
+// users.get("/:user_id/bells", async (req, res) => {
+//   const { user_id, bell_id } = req.params;
+//   const usersBells = await getAllBellsForUser(user_id, bell_id);
+//   res.json(usersBells);
+// });
 
-users.post("/:id/bells/:bellId", async (req, res) => {
-  const { id, bellId } = req.params;
-  const successfulAdd = await addNewBellForUser(id, bellId);
-  if (successfulAdd) {
-    res.status(201).json({ message: "Bell for user created!" });
-  } else {
-    res.status(422).json({ error: "unprocessable entity" });
-  }
-});
+// users.post("/:user_id/bells/:bell_id", async (req, res) => {
+//   const { user_id, bell_id } = req.params;
+//   const successfulAdd = await addNewBellForUser(user_id, bell_id);
+//   if (successfulAdd) {
+//     res.status(201).json({ message: "Bell for user created!" });
+//   } else {
+//     res.status(422).json({ error: "unprocessable entity" });
+//   }
+// });
 
 // Create
 users.post("/", async (req, res) => {

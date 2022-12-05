@@ -108,41 +108,41 @@ const deleteUser = async (user_id) => {
   }
 };
 
-const getAllBellsForUser = async (user_id) => {
-  try {
-    const bellsByUser = db.any(
-      `SELECT 
-                users_bells
-            JOIN
-                bells
-            ON
-                users_bells.bell_id = bells.id
-            JOIN
-                users
-            ON
-                users.user_id = users_bells.user_id
-            WHERE
-                users_bells.user_id = $1`,
-      user_id
-    );
-    return bellsByUser;
-  } catch (err) {
-    return err;
-  }
-};
+// const getAllBellsForUser = async (user_id) => {
+//   try {
+//     const bellsByUser = db.any(
+//       `SELECT
+//                 users_bells
+//             JOIN
+//                 bells
+//             ON
+//                 users_bells.bell_id = bells.id
+//             JOIN
+//                 users
+//             ON
+//                 users.user_id = users_bells.user_id
+//             WHERE
+//                 users_bells.user_id = $1`,
+//       user_id
+//     );
+//     return bellsByUser;
+//   } catch (err) {
+//     return err;
+//   }
+// };
 
-const addNewBellForUser = async (user_id, bell_id) => {
-  try {
-    // db.none returns NULL ALWAYS
-    const addedBell = await db.one(
-      `INSERT INTO users_bells (user_id, bell_id) VALUES ($1, $2) RETURNING *`,
-      [user_id, bell_id]
-    );
-    return addedBell;
-  } catch (err) {
-    return err;
-  }
-};
+// const addNewBellForUser = async (user_id, bell_id) => {
+//   try {
+//     // db.none returns NULL ALWAYS
+//     const addedBell = await db.one(
+//       `INSERT INTO users_bells (user_id, bell_id) VALUES ($1, $2) RETURNING *`,
+//       [user_id, bell_id]
+//     );
+//     return addedBell;
+//   } catch (err) {
+//     return err;
+//   }
+// };
 
 module.exports = {
   getAllUsers,
@@ -150,6 +150,6 @@ module.exports = {
   deleteUser,
   updateUser,
   createUser,
-  getAllBellsForUser,
-  addNewBellForUser,
+  // getAllBellsForUser,
+  // addNewBellForUser,
 };

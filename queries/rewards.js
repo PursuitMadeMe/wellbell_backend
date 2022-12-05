@@ -2,9 +2,7 @@ const db = require("../db/dbConfig.js");
 
 const getAllRewards = async () => {
   try {
-    const allRewards = await db.any(
-      "SELECT * FROM rewards"
-    );
+    const allRewards = await db.any("SELECT * FROM rewards");
     return allRewards;
   } catch (err) {
     return err;
@@ -57,7 +55,6 @@ const deleteReward = async (id) => {
     return err;
   }
 };
-
 
 module.exports = {
   getAllRewards,

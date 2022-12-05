@@ -6,7 +6,7 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
-  console.log(`App LIVE on PORT ${PORT}`);
+  console.log(`WellBell LIVE on PORT ${PORT}`);
 });
 
 // Listens for requests on whatever the PORT is that we specify - turns our server on.
