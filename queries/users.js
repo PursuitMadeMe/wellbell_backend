@@ -36,9 +36,10 @@ const createUser = async (user) => {
       physicalpreferences,
       nutritionalpreferences,
       mentalpreferences,
+      image,
     } = user;
     const newUser = await db.one(
-      "INSERT INTO users (user_id, email, username, firstname, lastname, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *",
+      "INSERT INTO users (user_id, email, username, firstname, lastname, physicalpoints, nutritionalpoints, selfcarepoints, physicalpreferences, nutritionalpreferences, mentalpreferences, image) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *",
       [
         user_id,
         email,
@@ -51,6 +52,7 @@ const createUser = async (user) => {
         physicalpreferences,
         nutritionalpreferences,
         mentalpreferences,
+        image
       ]
     );
     return newUser;
@@ -73,9 +75,10 @@ const updateUser = async (user, user_id) => {
       physicalpreferences,
       nutritionalpreferences,
       mentalpreferences,
+      image,
     } = user;
     const updatedUser = await db.one(
-      "UPDATE users SET email=$1, username=$2, firstname=$3, lastname=$4, physicalpoints=$5, nutritionalpoints=$6, selfcarepoints=$7, physicalpreferences=$8, nutritionalpreferences=$9, mentalpreferences=$10 WHERE user_id=$11 RETURNING *",
+      "UPDATE users SET email=$1, username=$2, firstname=$3, lastname=$4, physicalpoints=$5, nutritionalpoints=$6, selfcarepoints=$7, physicalpreferences=$8, nutritionalpreferences=$9, mentalpreferences=$10 image=$11 WHERE user_id=$12 RETURNING *",
       [
         email,
         username,
@@ -87,6 +90,7 @@ const updateUser = async (user, user_id) => {
         physicalpreferences,
         nutritionalpreferences,
         mentalpreferences,
+        image,
         user_id,
       ]
     );

@@ -27,7 +27,7 @@ const firebaseConfig = {
   storageBucket: "wellbell-4a40d.appspot.com",
   messagingSenderId: "33154837166",
   appId: "1:33154837166:web:cffc47a7ec9154036edb3f",
-  measurementId: "G-5YXH5XPXZ7"
+  measurementId: "G-5YXH5XPXZ7",
 };
 
 // Initialize Firebase

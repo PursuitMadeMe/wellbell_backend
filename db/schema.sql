@@ -9,6 +9,7 @@ CREATE TABLE users (
     user_id TEXT PRIMARY KEY UNIQUE NOT NULL,
     email TEXT NOT NULL,
     username TEXT NOT NULL,
+    password TEXT NOT NULL,
     firstname TEXT,
     lastname TEXT,
     physicalpoints INTEGER NOT NULL,
@@ -16,7 +17,8 @@ CREATE TABLE users (
     selfcarepoints INTEGER NOT NULL,
     physicalpreferences BOOLEAN DEFAULT false,
     nutritionalpreferences BOOLEAN DEFAULT false,
-    mentalpreferences BOOLEAN DEFAULT false
+    mentalpreferences BOOLEAN DEFAULT false,
+    image TEXT
 );
 
 DROP TABLE IF EXISTS bells;
