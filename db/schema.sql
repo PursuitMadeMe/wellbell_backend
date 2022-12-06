@@ -9,7 +9,7 @@ CREATE TABLE users (
     user_id TEXT PRIMARY KEY UNIQUE NOT NULL,
     email TEXT NOT NULL,
     username TEXT NOT NULL,
-    password TEXT NOT NULL,
+    password TEXT,
     firstname TEXT,
     lastname TEXT,
     physicalpoints INTEGER NOT NULL,

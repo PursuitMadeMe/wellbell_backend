@@ -60,10 +60,9 @@ users.get("/:user_id", async (req, res) => {
 users.post("/", async (req, res) => {
   const { body } = req;
   // ONLY a successful post will return an object with a key of id
-  body.user_id = body;
-
+  console.log(req.body);
   try {
-    const createdUser = await createUser(body.payload);
+    const createdUser = await createUser(body);
     if (createdUser.user_id) {
       res.status(200).json({
         success: true,
