@@ -44,7 +44,7 @@ INSERT INTO rewards ("type", "content", "code") VALUES
 INSERT INTO users ("user_id", "email", "username", "firstname", "lastname", "physicalpoints", "nutritionalpoints", "selfcarepoints", "physicalpreferences", "nutritionalpreferences", "mentalpreferences", "photourl") VALUES 
 ('YNWTla5dkzVnleNytVIH93DYFNf1', 'spencer.san@gmail.com', 'sbsimonsays', 'Spencer', 'Simon', '3', '11', '20', 'false', 'true', 'true', 'https://scontent-lga3-2.xx.fbcdn.net/v/t39.30808-6/239878120_10219582417855001_1098904951615926906_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=mbdCnkGcj2QAX8wbudq&_nc_ht=scontent-lga3-2.xx&oh=00_AfD2AQ7vnNXnjy54nYCmiQyC_itmkOF40u_BTGerXLvUtg&oe=6393216A'),
 ('uGemip0jhtN1JK5uIoV0S2bNKnt2', 'kenyetttagriffin@pursuit.org', 'kgriffin', 'Kim', 'Griffin', '4', '20', '12', 'true', 'false', 'true', 'https://i.ibb.co/hWkZbNp/Screenshot-2022-12-05-at-8-49-31-PM.png'),
-('07iTwOR48vRUvpeWAGctLEQyJYe2', 'pwnsauc3@yahoo.com', 'pwnsauc3', 'SAUCY', 'Sauce', 'McSauceson', '11', '12', '13', 'true', 'false', 'true', 'https://boredhumans.b-cdn.net/faces2/727.jpg'),
+('07iTwOR48vRUvpeWAGctLEQyJYe2', 'pwnsauc3@yahoo.com', 'pwnsauc3', 'Sauce', 'McSauceson', '11', '12', '13', 'true', 'false', 'true', 'https://boredhumans.b-cdn.net/faces2/727.jpg'),
 ('zfqiEWSrzLQCvnhIgEC08Dahl5t1', 'brahmajede@gmail.com', 'JedeB', 'Jede', 'Brahma', '0', '0', '0', 'false', 'false', 'false', '');
 
 
