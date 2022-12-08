@@ -9,16 +9,15 @@ CREATE TABLE users (
     user_id TEXT PRIMARY KEY UNIQUE NOT NULL,
     email TEXT NOT NULL,
     username TEXT NOT NULL,
-    password TEXT,
-    firstname TEXT,
-    lastname TEXT,
+    firstname TEXT NOT NULL,
+    lastname TEXT NOT NULL,
     physicalpoints INTEGER NOT NULL,
     nutritionalpoints INTEGER NOT NULL,
     selfcarepoints INTEGER NOT NULL,
     physicalpreferences BOOLEAN DEFAULT false,
     nutritionalpreferences BOOLEAN DEFAULT false,
     mentalpreferences BOOLEAN DEFAULT false,
-    image TEXT
+    photourl TEXT
 );
 
 DROP TABLE IF EXISTS bells;
