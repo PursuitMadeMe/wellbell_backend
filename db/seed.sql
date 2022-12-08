@@ -2,16 +2,20 @@
 
 
 INSERT INTO bells ("type", "message", "funfact") VALUES
+('Nutrition', 'Time for a Snack!', 'Coz you are not you when you are hungry.'),
 ('Nutrition', 'Drink Water!', '64oz of Water are Optimal.'),
 ('Nutrition', 'Treat Yourself to Brain Food!', 'Fish Are Rich in Omega-3s.'),
 ('Nutrition', 'Take Your Vitamins!', 'The Eight B Vitamins (thiamin, riboflavin, niacin, pantothenic acid, B6, biotin, folate and B12) provide the most energy.'),
 ('Nutrition', 'Take Your Time and Enjoy Your Meal!', 'It Takes 7 Minutes Until It Hits Your Stomach.'),
 ('Nutrition', 'Reach For A Healthy Treat!', 'Yogurt With Granola Packs Protein and Carbohydrates for Refueling.'),
+('Physical', 'Take a short walk outside!', 'Fresh air clears the mind
+.'),
 ('Physical', 'Take-4 Big Belly Breath', 'Breathe In For 4 Seconds, Hold for 7, Exhale for 8.'),
 ('Physical', 'Dangle Your Neck and Rotate Your Head 360 Degrees Slowly', 'This Will Remove Tension Headaches.'),
 ('Physical', 'Walk Away From Your Screen!', 'Blue Light Can Cause Eye Strain, Headaches, and Difficulty Focusing.'),
 ('Physical', 'Dance to Your Favorite Song!', 'Dancing Can Get The Blood Flowing.'),
 ('Physical', 'Stand Up and Stretch Your Body!', 'Stretching Will Make You Feel Refreshed and Ready to Work.'),
+('Self-Care', 'Treat yourself to a relaxing bath!', 'Bathing can benefit your muscles, joints and bones.'),
 ('Self-Care', 'STOP WHAT YOU ARE DOING! Listen to Your Favorite Tune!', 'Hearing Your Favorite Song Will Increase Dopamine and Serotonin - AKA the Feel-Good Chemicals - Levels in your Brain.'),
 ('Self-Care', 'Meditate for 5-10 Minutes!', 'Meditation Calms the Physical and Psychological Soul'),
 ('Self-Care', 'Look In The Mirror and Tell Yourself 5 Nice Things', 'Positive Affirmations Will Make You Feel Better.'),
