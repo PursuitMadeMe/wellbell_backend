@@ -36,7 +36,7 @@ bells.get("/:id", async (req, res) => {
 // Create
 bells.post("/", async (req, res) => {
   const { body } = req;
-  body.message = body;
+  body.id = req;
   try {
     const createdBell = await createBell(body.payload);
     if (createdBell.id) {
@@ -58,6 +58,9 @@ bells.post("/", async (req, res) => {
 // Update
 bells.put("/:id", async (req, res) => {
   const { id } = req.params;
+  const { body } = req;
+
+  body.id = body;
 
   const updatedBell = await updateBell(req.body, id);
   console.log(updatedBell);
