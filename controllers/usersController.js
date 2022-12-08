@@ -80,10 +80,12 @@ users.post("/", async (req, res) => {
 });
 
 // Update
-users.put("/:id", async (req, res) => {
-  const { id } = req.params;
+users.put("/:user_id", async (req, res) => {
+  const { user_id } = req.params;
 
-  const updatedUser = await updateUser(req.body, id);
+  body.user_id = body;
+
+  const updatedUser = await updateUser(req.body, user_id);
   console.log(updatedUser);
   if (updatedUser.user_id) {
     res.status(200).json(updatedUser);
@@ -94,8 +96,8 @@ users.put("/:id", async (req, res) => {
 
 // Delete
 users.delete("/:id", async (req, res) => {
-  const { id } = req.params;
-  const deletedUser = await deleteUser(id);
+  const { user_id } = req.params;
+  const deletedUser = await deleteUser(user_id);
   if (deletedUser.user_id) {
     res.status(200).json({ payload: deletedUser, success: true });
   } else {

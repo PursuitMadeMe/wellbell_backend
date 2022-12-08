@@ -37,7 +37,7 @@ rewards.get("/:id", async (req, res) => {
 rewards.post("/", async (req, res) => {
   const { body } = req;
 
-  body.type = body;
+  body.id = body;
 
   try {
     const createdReward = await createReward(body.payload);
@@ -60,6 +60,9 @@ rewards.post("/", async (req, res) => {
 // Update
 rewards.put("/:id", async (req, res) => {
   const { id } = req.params;
+  const { body } = req;
+
+  body.id = body;
 
   const updatedReward = await updateReward(req.body, id);
   console.log(updatedReward);

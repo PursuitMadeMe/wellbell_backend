@@ -95,8 +95,8 @@ users_bells.put("/:id", async (req, res) => {
 
 // Delete
 users_bells.delete("/:id", async (req, res) => {
-  const { id } = req.params;
-  const deletedUserBell = await deleteUserBell(id);
+  const { user_id } = req.params;
+  const deletedUserBell = await deleteUserBell(user_id);
   if (deletedUserBell.user_id) {
     res.status(200).json({ payload: deletedUser, success: true });
   } else {
