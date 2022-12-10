@@ -47,7 +47,7 @@ INSERT INTO users ("user_id", "email", "username", "firstname", "lastname", "phy
 ('iXIwO6SaxZhcRH9ylNAXERrS5tY2', 'pwnsauc3@yahoo.com', 'pwnsauc3', 'Sauce', 'McSauceson', '11', '12', '13', 'true', 'false', 'true', 'https://i.imgur.com/yTDolry.jpg'),
 ('zfqiEWSrzLQCvnhIgEC08Dahl5t1', 'brahmajede@gmail.com', 'JedeB', 'Jede', 'Brahma', '0', '0', '0', 'false', 'false', 'false', 'https://i.imgur.com/X0EP291.jpg'),
 ('hYVw8VlT65WqXC6cbgiv15I4uAx1', 'georgeB@gmail.com', 'Georgie', 'George', 'B', '3', '10', '8', 'false', 'true', 'false', 'https://i.imgur.com/X0EP291.jpg'),
-('bchPRWrHRnQnGZsDcoHzDUppITw2', 'wellbell123@wellbell.com', 'WellBell', 'Well', 'Bell', '2', '14', '20', 'false', 'true', 'true', 'https://i.imgur.com/X0EP291.jpg');
+('bchPRWrHRnQnGZsDcoHzDUppITw2', 'wellbell123@wellbell.com', 'mariat', 'Maria', 'Torres', '2', '14', '20', 'false', 'true', 'true', 'https://photos.psychologytoday.com/beb5db63-5916-4b34-9318-e2fae8c97746/2/320x400.jpeg');
 
 
 INSERT INTO users_bells ("user_id", "bell_id") VALUES
