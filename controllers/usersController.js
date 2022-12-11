@@ -27,6 +27,7 @@ users.get("/", async (req, res) => {
 users.get("/:user_id", async (req, res) => {
   const { user_id } = req.params;
   const user = await getUser(user_id);
+  console.log(req.body);
   if (user.user_id) {
     res.json({ payload: user, success: true });
   } else {
