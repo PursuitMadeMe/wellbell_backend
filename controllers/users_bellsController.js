@@ -9,8 +9,6 @@ const {
   createUserBell,
   updateUserBell,
   deleteUserBell,
-  getAllBellsForUser,
-  addNewBellForUser,
 } = require("../queries/users_bells.js");
 
 //INDEX
@@ -35,24 +33,6 @@ users_bells.get("/:user_id", async (req, res) => {
       success: false,
       error: "user not found",
     });
-  }
-});
-
-// CAN FIND SPECIFIC USER/EMAIL THROUGH GET REQUEST
-
-users_bells.get("/:user_id/bells", async (req, res) => {
-  const { user_id, bell_id } = req.params;
-  const usersbellsBells = await getAllBellsForUser(user_id, bell_id);
-  res.json(usersbellsBells);
-});
-
-users_bells.post("/:user_id/bells/:bell_id", async (req, res) => {
-  const { user_id, bell_id } = req.params;
-  const successfulAddBell = await addNewBellForUser(user_id, bell_id);
-  if (successfulAddBell) {
-    res.status(201).json({ message: "Bell for user created!" });
-  } else {
-    res.status(422).json({ error: "unprocessable entity" });
   }
 });
 

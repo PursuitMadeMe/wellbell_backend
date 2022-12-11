@@ -24,10 +24,10 @@ const getUserBells = async (user_id) => {
 const createUserBell = async (user) => {
   // destructuring our user object
   try {
-    const { user_id, bell_id, created } = user;
+    const { user_id, bell_id, created, completion } = user;
     const newUserBell = await db.one(
-      "INSERT INTO users_bells (user_id, bell_id, created) VALUES ($1, $2, $3) RETURNING *",
-      [user_id, bell_id, created]
+      "INSERT INTO users_bells (user_id, bell_id, created, completion) VALUES ($1, $2, $3, $4) RETURNING *",
+      [user_id, bell_id, created, completion]
     );
     return newUserBell;
   } catch (err) {
@@ -38,10 +38,10 @@ const createUserBell = async (user) => {
 // we need to make sure we pass our arguments in the correct order when updating
 const updateUserBell = async (user_id, bell_id) => {
   try {
-    const { user_id, bell_id } = user;
+    const { user_id, bell_id, completion } = user;
     const updatedUserBell = await db.one(
-      "UPDATE users_bells SET bell_id=$1 WHERE user_id=$2 RETURNING *",
-      [bell_id, user_id]
+      "UPDATE users_bells SET bell_id=$1, completion=$2 WHERE user_id=$4 RETURNING *",
+      [bell_id, completion, user_id]
     );
     return updatedUserBell;
   } catch (err) {
@@ -61,48 +61,10 @@ const deleteUserBell = async (user_id) => {
   }
 };
 
-const getAllBellsForUser = async (user_id) => {
-  try {
-    const bellsByUser = db.any(
-      `SELECT 
-                users_bells
-            JOIN
-                bells
-            ON
-                users_bells.bell_id = bells.id
-            JOIN
-                users
-            ON
-                users.user_id = users_bells.user_id
-            WHERE
-                users_bells.user_id = $1`,
-      user_id
-    );
-    return bellsByUser;
-  } catch (err) {
-    return err;
-  }
-};
-
-const addNewBellForUser = async (user_id, bell_id) => {
-  try {
-    // db.none returns NULL ALWAYS
-    const addedBell = await db.one(
-      `INSERT INTO users_bells (user_id, bell_id) VALUES ($1, $2) RETURNING *`,
-      [user_id, bell_id]
-    );
-    return addedBell;
-  } catch (err) {
-    return err;
-  }
-};
-
 module.exports = {
   getAllUsersBells,
   getUserBells,
   deleteUserBell,
   updateUserBell,
   createUserBell,
-  getAllBellsForUser,
-  addNewBellForUser,
 };

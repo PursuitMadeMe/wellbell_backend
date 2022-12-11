@@ -61,48 +61,10 @@ const deleteUserReward = async (user_id) => {
   }
 };
 
-const getAllRewardsForUser = async (user_id) => {
-  try {
-    const rewardsByUser = db.any(
-      `SELECT 
-                users_rewards
-            JOIN
-                rewards
-            ON
-                users_rewards.reward_id = rewards.id
-            JOIN
-                users
-            ON
-                users.user_id = users_rewards.user_id
-            WHERE
-                users_rewards.user_id = $1`,
-      user_id
-    );
-    return rewardsByUser;
-  } catch (err) {
-    return err;
-  }
-};
-
-const addNewRewardForUser = async (user_id, reward_id) => {
-  try {
-    // db.none returns NULL ALWAYS
-    const addedReward = await db.one(
-      `INSERT INTO users_rewards (user_id, reward_id, created) VALUES ($1, $2, $3) RETURNING *`,
-      [user_id, reward_id, created]
-    );
-    return addedReward;
-  } catch (err) {
-    return err;
-  }
-};
-
 module.exports = {
   getAllUsersRewards,
   getUserRewards,
   deleteUserReward,
   updateUserReward,
   createUserReward,
-  getAllRewardsForUser,
-  addNewRewardForUser,
 };

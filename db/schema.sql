@@ -45,7 +45,8 @@ DROP TABLE IF EXISTS users_bells;
 CREATE TABLE users_bells (
     user_id TEXT NOT NULL,
     bell_id INTEGER NOT NULL,
-    created TIMESTAMP DEFAULT NOW()
+    created TIMESTAMP DEFAULT NOW(),
+    completion BOOLEAN DEFAULT false
 );
 
 DROP TABLE IF EXISTS users_rewards;

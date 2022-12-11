@@ -50,13 +50,13 @@ INSERT INTO users ("user_id", "email", "username", "firstname", "lastname", "phy
 ('Fi5sU6ffPXMWI0bWmq40OguYXXn1', 'zanezane@gmail.com', 'ZaneZane', 'Zane', 'Ahmed', '35', '75', '100', 'false', 'true', 'true', 'https://tinyurl.com/2x64jatk');
 
 
-INSERT INTO users_bells ("user_id", "bell_id") VALUES
-('YNWTla5dkzVnleNytVIH93DYFNf1', '1'),
-('YNWTla5dkzVnleNytVIH93DYFNf1', '7'),
-('YNWTla5dkzVnleNytVIH93DYFNf1', '14'),
-('uGemip0jhtN1JK5uIoV0S2bNKnt2', '8'),
-('uGemip0jhtN1JK5uIoV0S2bNKnt2', '15'),
-('uGemip0jhtN1JK5uIoV0S2bNKnt2', '3');
+INSERT INTO users_bells ("user_id", "bell_id", "completion") VALUES
+('YNWTla5dkzVnleNytVIH93DYFNf1', '1', 'false'),
+('YNWTla5dkzVnleNytVIH93DYFNf1', '7', 'false'),
+('YNWTla5dkzVnleNytVIH93DYFNf1', '14', 'true'),
+('YNWTla5dkzVnleNytVIH93DYFNf1', '8', 'true'),
+('YNWTla5dkzVnleNytVIH93DYFNf1', '15', 'false'),
+('YNWTla5dkzVnleNytVIH93DYFNf1', '3', 'false');
 
 
 INSERT INTO users_rewards ("user_id", "reward_id") VALUES
