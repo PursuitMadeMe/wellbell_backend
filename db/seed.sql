@@ -47,16 +47,17 @@ INSERT INTO users ("user_id", "email", "username", "firstname", "lastname", "phy
 ('f4nDsRySYhYBCIJZ8tdjUEVsKbp1', 'pwnsauc3@yahoo.com', 'pwnsauc3', 'Sauce', 'McSauceson', '15', '25', '65', 'true', 'false', 'true', 'https://i.imgur.com/yTDolry.jpg'),
 ('zfqiEWSrzLQCvnhIgEC08Dahl5t1', 'brahmajede@gmail.com', 'JedeB', 'Jede', 'Brahma', '45', '85', '30', 'false', 'false', 'false', 'https://i.imgur.com/X0EP291.jpg'),
 ('bchPRWrHRnQnGZsDcoHzDUppITw2', 'wellbell123@wellbell.com', 'mariat', 'Maria', 'Torres', '20', '40', '20', 'false', 'true', 'true', 'https://photos.psychologytoday.com/beb5db63-5916-4b34-9318-e2fae8c97746/2/320x400.jpeg'),
-('Fi5sU6ffPXMWI0bWmq40OguYXXn1', 'zanezane@gmail.com', 'ZaneZane', 'Zane', 'Ahmed', '35', '75', '100', 'false', 'true', 'true', 'https://tinyurl.com/2x64jatk');
+('Fi5sU6ffPXMWI0bWmq40OguYXXn1', 'zanezane@gmail.com', 'ZaneZane', 'Zane', 'Ahmed', '35', '75', '100', 'false', 'true', 'true', 'https://tinyurl.com/2x64jatk'),
+('vkr20t9FlqNOOUejGl6N7lKfJ3G3', 'tshelby@pbe.org', 'TShelby', 'Thomas', 'Shelby', '85', '40', '100', 'false', 'true', 'true', 'https://i.imgur.com/yTDolry.jpg');
 
 
 INSERT INTO users_bells ("user_id", "bell_id", "completion") VALUES
-('YNWTla5dkzVnleNytVIH93DYFNf1', '1', 'false'),
-('YNWTla5dkzVnleNytVIH93DYFNf1', '7', 'false'),
-('YNWTla5dkzVnleNytVIH93DYFNf1', '14', 'true'),
-('YNWTla5dkzVnleNytVIH93DYFNf1', '8', 'true'),
-('YNWTla5dkzVnleNytVIH93DYFNf1', '15', 'false'),
-('YNWTla5dkzVnleNytVIH93DYFNf1', '3', 'false');
+('vkr20t9FlqNOOUejGl6N7lKfJ3G3', '1', 'false'),
+('vkr20t9FlqNOOUejGl6N7lKfJ3G3', '7', 'false'),
+('vkr20t9FlqNOOUejGl6N7lKfJ3G3', '14', 'true'),
+('vkr20t9FlqNOOUejGl6N7lKfJ3G3', '8', 'true'),
+('vkr20t9FlqNOOUejGl6N7lKfJ3G3', '15', 'false'),
+('vkr20t9FlqNOOUejGl6N7lKfJ3G3', '3', 'false');
 
 
 INSERT INTO users_rewards ("user_id", "reward_id") VALUES
