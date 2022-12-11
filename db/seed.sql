@@ -42,11 +42,11 @@ INSERT INTO rewards ("type", "content", "code") VALUES
 
 
 INSERT INTO users ("user_id", "email", "username", "firstname", "lastname", "physicalpoints", "nutritionalpoints", "selfcarepoints", "physicalpreferences", "nutritionalpreferences", "mentalpreferences", "photourl") VALUES 
-('YNWTla5dkzVnleNytVIH93DYFNf1', 'spencer.san@gmail.com', 'sbsimonsays', 'Spencer', 'Simon', '3', '11', '20', 'false', 'true', 'true', 'https://i.imgur.com/Ivr9Rmo.jpg'),
-('uGemip0jhtN1JK5uIoV0S2bNKnt2', 'kenyetttagriffin@pursuit.org', 'kgriffin', 'Kim', 'Griffin', '4', '20', '12', 'true', 'false', 'true', 'https://i.imgur.com/pAOlbc2.png'),
-('f4nDsRySYhYBCIJZ8tdjUEVsKbp1', 'pwnsauc3@yahoo.com', 'pwnsauc3', 'Sauce', 'McSauceson', '11', '12', '13', 'true', 'false', 'true', 'https://i.imgur.com/yTDolry.jpg'),
-('zfqiEWSrzLQCvnhIgEC08Dahl5t1', 'brahmajede@gmail.com', 'JedeB', 'Jede', 'Brahma', '0', '0', '0', 'false', 'false', 'false', 'https://i.imgur.com/X0EP291.jpg'),
-('bchPRWrHRnQnGZsDcoHzDUppITw2', 'wellbell123@wellbell.com', 'mariat', 'Maria', 'Torres', '2', '14', '20', 'false', 'true', 'true', 'https://photos.psychologytoday.com/beb5db63-5916-4b34-9318-e2fae8c97746/2/320x400.jpeg'),
+('YNWTla5dkzVnleNytVIH93DYFNf1', 'spencer.san@gmail.com', 'sbsimonsays', 'Spencer', 'Simon', '35', '80', '95', 'false', 'true', 'true', 'https://i.imgur.com/Ivr9Rmo.jpg'),
+('uGemip0jhtN1JK5uIoV0S2bNKnt2', 'kenyetttagriffin@pursuit.org', 'kgriffin', 'Kim', 'Griffin', '50', '20', '40', 'true', 'false', 'true', 'https://i.imgur.com/pAOlbc2.png'),
+('f4nDsRySYhYBCIJZ8tdjUEVsKbp1', 'pwnsauc3@yahoo.com', 'pwnsauc3', 'Sauce', 'McSauceson', '15', '25', '65', 'true', 'false', 'true', 'https://i.imgur.com/yTDolry.jpg'),
+('zfqiEWSrzLQCvnhIgEC08Dahl5t1', 'brahmajede@gmail.com', 'JedeB', 'Jede', 'Brahma', '45', '85', '30', 'false', 'false', 'false', 'https://i.imgur.com/X0EP291.jpg'),
+('bchPRWrHRnQnGZsDcoHzDUppITw2', 'wellbell123@wellbell.com', 'mariat', 'Maria', 'Torres', '20', '40', '20', 'false', 'true', 'true', 'https://photos.psychologytoday.com/beb5db63-5916-4b34-9318-e2fae8c97746/2/320x400.jpeg'),
 ('Fi5sU6ffPXMWI0bWmq40OguYXXn1', 'zanezane@gmail.com', 'ZaneZane', 'Zane', 'Ahmed', '35', '75', '100', 'false', 'true', 'true', 'https://tinyurl.com/2x64jatk');
 
 
