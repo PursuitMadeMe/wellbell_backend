@@ -47,7 +47,7 @@ INSERT INTO users ("user_id", "email", "username", "firstname", "lastname", "phy
 ('f4nDsRySYhYBCIJZ8tdjUEVsKbp1', 'pwnsauc3@yahoo.com', 'pwnsauc3', 'Sauce', 'McSauceson', '15', '25', '65', 'true', 'false', 'true', 'https://i.imgur.com/yTDolry.jpg'),
 ('zfqiEWSrzLQCvnhIgEC08Dahl5t1', 'brahmajede@gmail.com', 'JedeB', 'Jede', 'Brahma', '45', '85', '30', 'false', 'false', 'false', 'https://i.imgur.com/X0EP291.jpg'),
 ('bchPRWrHRnQnGZsDcoHzDUppITw2', 'wellbell123@wellbell.com', 'mariat', 'Maria', 'Torres', '20', '40', '20', 'false', 'true', 'true', 'https://photos.psychologytoday.com/beb5db63-5916-4b34-9318-e2fae8c97746/2/320x400.jpeg'),
-('Fi5sU6ffPXMWI0bWmq40OguYXXn1', 'zanezane@gmail.com', 'ZaneZane', 'Zane', 'Ahmed', '35', '75', '100', 'true', 'true', 'false', 'https://tinyurl.com/2x64jatk'),
+('Fi5sU6ffPXMWI0bWmq40OguYXXn1', 'zanezane@gmail.com', 'ZaneZane', 'Zane', 'Ahmed', '35', '75', '95', 'true', 'true', 'false', 'https://tinyurl.com/2x64jatk'),
 ('vkr20t9FlqNOOUejGl6N7lKfJ3G3', 'tshelby@pbe.org', 'TShelby', 'Thomas', 'Shelby', '85', '40', '100', 'false', 'true', 'true', 'https://i.imgur.com/yTDolry.jpg');
 
 
